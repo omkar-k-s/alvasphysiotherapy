@@ -5,7 +5,7 @@
 .hero-section {
   position: relative;
   background: linear-gradient(135deg, #FFFFFF 0%, #F7FCFC 50%, #EAF8F8 100%);
-  padding: 3.5rem 0 3.75rem;
+  padding: clamp(2.25rem, 3.5vw, 3.75rem) 0 clamp(2.5rem, 4vw, 4.25rem);
   overflow: hidden;
 }
 
@@ -24,8 +24,8 @@
   position: absolute;
   top: -60px;
   left: -60px;
-  width: 380px;
-  height: 380px;
+  width: clamp(260px, 28vw, 380px);
+  height: clamp(260px, 28vw, 380px);
 }
 
 /* Dotted Grid Pattern */
@@ -46,8 +46,8 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 190px;
-  height: 250px;
+  width: clamp(130px, 14vw, 190px);
+  height: clamp(170px, 18vw, 250px);
   pointer-events: none;
   z-index: 2;
 }
@@ -57,17 +57,17 @@
   position: absolute;
   top: 15%;
   right: 0;
-  width: 130px;
-  height: 220px;
+  width: clamp(90px, 10vw, 130px);
+  height: clamp(160px, 16vw, 220px);
   pointer-events: none;
   z-index: 2;
 }
 
 .hero-container {
   display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
   align-items: center;
-  gap: 3.5rem;
+  gap: clamp(1.5rem, 3vw, 3.25rem);
   position: relative;
   z-index: 3;
 }
@@ -78,13 +78,14 @@
 .hero-left {
   display: flex;
   flex-direction: column;
+  min-width: 0;
 }
 
 .hero-eyebrow {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  margin-bottom: 1.1rem;
+  margin-bottom: clamp(0.75rem, 1vw, 1.1rem);
 }
 
 .eyebrow-dash {
@@ -95,20 +96,21 @@
 }
 
 .eyebrow-text {
-  font-size: 0.84rem;
+  font-size: clamp(0.76rem, 0.85vw, 0.84rem);
   font-weight: 700;
-  letter-spacing: 0.24em;
+  letter-spacing: 0.22em;
   color: #082B50; /* Dark Navy */
   text-transform: uppercase;
 }
 
 .hero-heading {
-  font-size: clamp(2.35rem, 3.7vw, 3.45rem);
+  font-size: clamp(2rem, 2.75vw, 3.25rem);
   font-weight: 800;
   color: #082B50; /* Dark Navy */
-  line-height: 1.18;
-  margin-bottom: 1.25rem;
+  line-height: 1.16;
+  margin-bottom: clamp(0.85rem, 1.1vw, 1.25rem);
   letter-spacing: -0.02em;
+  word-break: break-word;
 }
 
 .hero-highlight {
@@ -117,18 +119,18 @@
 }
 
 .hero-meta-group {
-  margin-bottom: 2rem;
+  margin-bottom: clamp(1.2rem, 1.8vw, 1.85rem);
 }
 
 .hero-affiliate {
-  font-size: 1.05rem;
-  color: var(--color-body); /* #526B7B */
+  font-size: clamp(0.92rem, 0.98vw, 1.05rem);
+  color: var(--color-body); /* #4A6375 */
   font-weight: 500;
   margin-bottom: 0.25rem;
 }
 
 .hero-since {
-  font-size: 0.98rem;
+  font-size: clamp(0.88rem, 0.92vw, 0.98rem);
   font-weight: 700;
   color: var(--color-orange); /* Institutional founding year */
   display: inline-flex;
@@ -140,9 +142,9 @@
 .hero-features-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
-  margin-bottom: 2.25rem;
-  padding: 1.25rem 0.5rem;
+  gap: clamp(0.4rem, 0.8vw, 1rem);
+  margin-bottom: clamp(1.35rem, 1.9vw, 2rem);
+  padding: clamp(0.85rem, 1.2vw, 1.15rem) 0;
   border-top: 1px solid rgba(220, 235, 236, 0.9);
   border-bottom: 1px solid rgba(220, 235, 236, 0.9);
 }
@@ -152,18 +154,25 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 0.5rem;
+  gap: 0.45rem;
+  min-width: 0;
 }
 
 .feature-icon-wrapper {
-  width: 50px;
-  height: 50px;
+  width: clamp(40px, 3.4vw, 48px);
+  height: clamp(40px, 3.4vw, 48px);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: transform var(--transition-fast);
   box-shadow: 0 2px 8px rgba(7, 91, 96, 0.05);
+  flex-shrink: 0;
+}
+
+.feature-icon-wrapper svg {
+  width: clamp(18px, 1.6vw, 22px);
+  height: clamp(18px, 1.6vw, 22px);
 }
 
 .hero-feature-item:hover .feature-icon-wrapper {
@@ -194,40 +203,43 @@
 .feature-text-block {
   display: flex;
   flex-direction: column;
-  line-height: 1.25;
+  line-height: 1.2;
 }
 
 .feature-primary-text {
-  font-size: 0.8rem;
+  font-size: clamp(0.72rem, 0.78vw, 0.8rem);
   font-weight: 700;
   color: #082B50; /* Dark Navy */
+  white-space: nowrap;
 }
 
 .feature-secondary-text {
-  font-size: 0.74rem;
+  font-size: clamp(0.66rem, 0.72vw, 0.74rem);
   font-weight: 500;
   color: #64748B;
+  white-space: nowrap;
 }
 
 /* CTA Buttons */
 .hero-cta-group {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
+  gap: clamp(0.85rem, 1.2vw, 1.25rem);
 }
 
 .btn-primary-teal {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 9px;
   background-color: var(--color-deep-teal); /* #075B60 */
   color: var(--color-white);
-  padding: 0.88rem 1.85rem;
-  font-size: 0.94rem;
+  padding: clamp(0.75rem, 0.85vw, 0.88rem) clamp(1.35rem, 1.5vw, 1.85rem);
+  font-size: clamp(0.86rem, 0.92vw, 0.94rem);
   font-weight: 700;
   border-radius: var(--radius-md);
   box-shadow: 0 4px 14px rgba(7, 91, 96, 0.28);
   transition: all var(--transition-fast);
+  white-space: nowrap;
 }
 
 .btn-primary-teal:hover {
@@ -247,15 +259,16 @@
 .btn-secondary-teal {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 9px;
   background-color: var(--color-white);
   color: #082B50; /* Dark Navy */
-  padding: 0.88rem 1.65rem;
-  font-size: 0.94rem;
+  padding: clamp(0.75rem, 0.85vw, 0.88rem) clamp(1.25rem, 1.4vw, 1.65rem);
+  font-size: clamp(0.86rem, 0.92vw, 0.94rem);
   font-weight: 700;
   border-radius: var(--radius-md);
   border: 1.5px solid var(--color-border); /* #DCEBEC */
   transition: all var(--transition-fast);
+  white-space: nowrap;
 }
 
 .btn-secondary-teal:hover {
@@ -280,25 +293,28 @@
 .hero-right {
   position: relative;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
+  min-width: 0;
 }
 
 .hero-collage-wrapper {
   position: relative;
   width: 100%;
-  max-width: 630px;
-  min-height: 490px;
+  max-width: 580px;
+  height: clamp(390px, 32vw, 470px);
 }
 
 /* Main Campus Building */
 .main-campus-card {
-  width: 80%;
-  height: 450px;
-  border-radius: 28px;
+  width: 76%;
+  height: 92%;
+  border-radius: clamp(18px, 1.8vw, 26px);
   overflow: hidden;
   box-shadow: 0 16px 36px rgba(7, 91, 96, 0.16);
   border: 4px solid var(--color-white);
-  position: relative;
+  position: absolute;
+  top: 4%;
+  left: 0;
 }
 
 .campus-img {
@@ -312,16 +328,16 @@
   transform: scale(1.03);
 }
 
-/* Top Right Floating Treatment Card with Script Panel */
+/* Top Right Floating Treatment Card with Split Script */
 .floating-card-top {
   position: absolute;
-  top: -15px;
-  right: -15px;
-  width: 60%;
-  height: 220px;
-  border-radius: 24px;
+  top: 0;
+  right: 0;
+  width: 58%;
+  height: clamp(165px, 13.5vw, 205px);
+  border-radius: clamp(16px, 1.6vw, 22px);
   overflow: hidden;
-  box-shadow: 0 18px 40px rgba(7, 91, 96, 0.22);
+  box-shadow: 0 16px 36px rgba(7, 91, 96, 0.22);
   border: 4px solid var(--color-white);
   background: var(--color-white);
   z-index: 3;
@@ -334,13 +350,13 @@
 }
 
 .treatment-script-panel {
-  width: 44%;
+  width: 45%;
   height: 100%;
   background-color: var(--color-white);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.85rem 0.65rem 0.85rem 1rem;
+  padding: clamp(0.5rem, 0.75vw, 0.85rem);
   position: relative;
   z-index: 2;
 }
@@ -354,7 +370,7 @@
 .script-line-1,
 .script-line-2 {
   font-family: var(--font-script);
-  font-size: 1.3rem;
+  font-size: clamp(1.05rem, 1.15vw, 1.25rem);
   font-weight: 700;
   color: var(--color-deep-teal); /* #075B60 */
   letter-spacing: -0.01em;
@@ -365,15 +381,15 @@
 }
 
 .script-orange-bar {
-  width: 46px;
+  width: clamp(32px, 3vw, 42px);
   height: 3px;
   background-color: #48AAAD; /* Teal decorative line */
   border-radius: 2px;
-  margin-top: 6px;
+  margin-top: 5px;
 }
 
 .treatment-photo-panel {
-  width: 56%;
+  width: 55%;
   height: 100%;
   overflow: hidden;
 }
@@ -392,13 +408,13 @@
 /* Bottom Right Floating Rehab Card */
 .floating-card-bottom {
   position: absolute;
-  bottom: -22px;
-  right: 0px;
-  width: 55%;
-  height: 220px;
-  border-radius: 24px;
+  bottom: 0;
+  right: 0;
+  width: 56%;
+  height: clamp(165px, 13.5vw, 205px);
+  border-radius: clamp(16px, 1.6vw, 22px);
   overflow: hidden;
-  box-shadow: 0 18px 40px rgba(7, 91, 96, 0.22);
+  box-shadow: 0 16px 36px rgba(7, 91, 96, 0.22);
   border: 4px solid var(--color-white);
   background: var(--color-white);
   z-index: 4;
@@ -418,23 +434,23 @@
 /* Circular Excellence Badge in Deep Teal & Gold */
 .excellence-badge {
   position: absolute;
-  bottom: 12px;
-  right: 12px;
+  bottom: clamp(8px, 0.9vw, 12px);
+  right: clamp(8px, 0.9vw, 12px);
   background-color: var(--color-deep-teal); /* #075B60 */
   color: var(--color-white);
-  padding: 8px 14px;
+  padding: clamp(5px, 0.6vw, 7px) clamp(8px, 0.8vw, 12px);
   border-radius: 9999px;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: clamp(6px, 0.7vw, 9px);
   border: 2px solid var(--color-gold); /* #FFC928 */
-  box-shadow: 0 8px 20px rgba(7, 91, 96, 0.45);
+  box-shadow: 0 6px 16px rgba(7, 91, 96, 0.4);
   z-index: 5;
 }
 
 .badge-icon-circle {
-  width: 32px;
-  height: 32px;
+  width: clamp(26px, 2.2vw, 30px);
+  height: clamp(26px, 2.2vw, 30px);
   border-radius: 50%;
   background: rgba(255, 201, 40, 0.18);
   display: flex;
@@ -445,6 +461,8 @@
 
 .badge-award-icon {
   color: var(--color-gold);
+  width: clamp(14px, 1.3vw, 18px);
+  height: clamp(14px, 1.3vw, 18px);
 }
 
 .badge-text-content {
@@ -455,21 +473,21 @@
 }
 
 .badge-title {
-  font-size: 0.58rem;
+  font-size: clamp(0.52rem, 0.56vw, 0.58rem);
   font-weight: 700;
   letter-spacing: 0.08em;
   color: #B2E5E7;
 }
 
 .badge-sub {
-  font-size: 0.62rem;
+  font-size: clamp(0.55rem, 0.6vw, 0.62rem);
   font-weight: 800;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
   color: var(--color-white);
 }
 
 .badge-year {
-  font-size: 0.62rem;
+  font-size: clamp(0.55rem, 0.6vw, 0.62rem);
   font-weight: 800;
   letter-spacing: 0.08em;
   color: var(--color-gold);
@@ -478,19 +496,10 @@
 /* --------------------------------------------------------------------------
    Responsive Breakpoints
    -------------------------------------------------------------------------- */
-@media (max-width: 1100px) {
-  .hero-container {
-    gap: 2rem;
-  }
-  .hero-heading {
-    font-size: 2.3rem;
-  }
-}
-
-@media (max-width: 960px) {
+@media (max-width: 1024px) {
   .hero-container {
     grid-template-columns: 1fr;
-    gap: 3rem;
+    gap: 2.75rem;
   }
   .hero-left {
     text-align: center;
@@ -503,8 +512,13 @@
     justify-content: center;
   }
   .hero-collage-wrapper {
-    max-width: 520px;
+    max-width: 500px;
+    height: 380px;
     margin: 0 auto;
+  }
+  .floating-card-top,
+  .floating-card-bottom {
+    height: 180px;
   }
   .botanical-leaves-bottom-left {
     width: 120px;
@@ -518,36 +532,32 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 1.25rem 0.75rem;
   }
+  .hero-feature-item {
+    text-align: center;
+  }
+  .feature-primary-text,
+  .feature-secondary-text {
+    white-space: normal;
+  }
   .hero-collage-wrapper {
-    min-height: 380px;
+    height: 320px;
+    max-width: 360px;
   }
   .main-campus-card {
-    width: 90%;
-    height: 320px;
+    width: 82%;
+    height: 90%;
   }
   .floating-card-top {
-    width: 72%;
-    height: 165px;
-    right: 0;
+    width: 68%;
+    height: 145px;
   }
-  .treatment-script-panel {
-    padding: 0.5rem;
+  .floating-card-bottom {
+    width: 65%;
+    height: 145px;
   }
   .script-line-1,
   .script-line-2 {
-    font-size: 0.95rem;
-  }
-  .floating-card-bottom {
-    width: 68%;
-    height: 165px;
-  }
-  .excellence-badge {
-    padding: 5px 10px;
-    bottom: 8px;
-    right: 8px;
-  }
-  .badge-sub, .badge-title {
-    font-size: 0.55rem;
+    font-size: 0.9rem;
   }
   .hero-cta-group {
     flex-direction: column;

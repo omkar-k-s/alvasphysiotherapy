@@ -1,89 +1,65 @@
 import React from 'react';
-import { BookOpen, Laptop, Users2, ArrowRight } from 'lucide-react';
+import { CheckCircle2, ArrowRight } from 'lucide-react';
 import './AboutSection.css';
 
 export default function AboutSection() {
-  const cards = [
-    {
-      id: 1,
-      title: 'Academic Excellence',
-      description: 'Comprehensive curriculum with clinical exposure',
-      image: '/images/about_academic_excellence.jpg',
-      icon: <BookOpen size={20} />,
-    },
-    {
-      id: 2,
-      title: 'Modern Facilities',
-      description: 'Well-equipped labs and advanced infrastructure',
-      image: '/images/about_modern_facilities.jpg',
-      icon: <Laptop size={20} />,
-    },
-    {
-      id: 3,
-      title: 'Skilled Faculty',
-      description: 'Learn from experienced and dedicated faculty',
-      image: '/images/about_skilled_faculty.jpg',
-      icon: <Users2 size={20} />,
-    },
+  const highlights = [
+    'Affiliated to Rajiv Gandhi University of Health Sciences, Karnataka',
+    'Recognised by the relevant government authorities and statutory bodies',
+    'Focus on comprehensive clinical training, healthcare research, and innovation',
+    'Student-centred learning, mentorship, and holistic professional development',
   ];
 
   return (
-    <section className="about-section" id="about-us">
-      {/* Subtle Botanical Decoration Bottom Left */}
-      <div className="about-decorations" aria-hidden="true">
-        <svg className="botanical-svg-bottom" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M50,180 Q90,120 170,100 Q110,140 50,180 Z" fill="#90CDF4" opacity="0.25" />
-          <path d="M30,140 Q80,90 150,70 Q90,120 30,140 Z" fill="#63B3ED" opacity="0.2" />
-        </svg>
-      </div>
-
+    <section className="about-section" id="about-us" aria-label="About Our College">
       <div className="container about-container">
-        {/* Left Descriptive Column */}
-        <div className="about-left-col">
+        {/* Left Column: Large rounded clinical training photo */}
+        <div className="about-image-column">
+          <div className="about-image-frame">
+            <img
+              src="/images/about_campus_building.jpg"
+              alt="Alva's College of Physiotherapy Campus Building"
+              className="about-clinical-img"
+              loading="lazy"
+            />
+            <div className="about-badge-card">
+              <span className="badge-highlight-number">Since 1995</span>
+              <span className="badge-highlight-sub">Premier Physiotherapy Institute</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Right Column: Information, Highlights & Action */}
+        <div className="about-content-column">
           <div className="about-eyebrow">
             <span className="about-eyebrow-dash"></span>
-            <span className="about-eyebrow-text">ABOUT US</span>
+            <span className="about-eyebrow-text">ABOUT OUR COLLEGE</span>
           </div>
 
           <h2 className="about-heading">
-            Shaping Future Physiotherapy Professionals
+            Shaping Future Physiotherapists Through Excellence
           </h2>
 
-          <p className="about-paragraph">
-            Alva’s College of Physiotherapy and Research Centre has been a pioneer in providing quality physiotherapy education since 1995, with a focus on academic excellence, clinical exposure and holistic development.
+          <p className="about-description">
+            Alva’s College of Physiotherapy and Research Centre is committed to providing quality physiotherapy education, clinical training, and opportunities for academic and professional development.
           </p>
 
-          <a href="#about-us" className="btn-about-action">
-            <span>Know More About Us</span>
-            <ArrowRight size={18} className="about-btn-arrow" />
-          </a>
-        </div>
-
-        {/* Right 3 Feature Image Cards */}
-        <div className="about-right-col">
-          <div className="about-cards-grid">
-            {cards.map((card) => (
-              <div key={card.id} className="about-feature-card">
-                <div className="card-image-wrapper">
-                  <img
-                    src={card.image}
-                    alt={card.title}
-                    className="card-feature-img"
-                  />
-                  <div className="card-gradient-overlay"></div>
+          <ul className="about-highlights-list" role="list">
+            {highlights.map((point, index) => (
+              <li key={index} className="about-highlight-item">
+                <div className="highlight-icon-box" aria-hidden="true">
+                  <CheckCircle2 size={20} className="highlight-check-icon" />
                 </div>
-
-                <div className="card-info-content">
-                  <div className="card-icon-box" aria-hidden="true">
-                    {card.icon}
-                  </div>
-                  <div className="card-text-group">
-                    <h3 className="card-feature-title">{card.title}</h3>
-                    <p className="card-feature-desc">{card.description}</p>
-                  </div>
-                </div>
-              </div>
+                <span className="highlight-text">{point}</span>
+              </li>
             ))}
+          </ul>
+
+          <div className="about-cta-wrapper">
+            <a href="#about-us" className="btn-about-teal">
+              <span>Learn More About Us</span>
+              <ArrowRight size={18} className="btn-arrow" />
+            </a>
           </div>
         </div>
       </div>

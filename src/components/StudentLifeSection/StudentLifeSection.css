@@ -1,0 +1,182 @@
+/* ==========================================================================
+   Student Life Section (Two-Column with 4-Photo Balanced Gallery)
+   ========================================================================== */
+
+.student-life-section {
+  padding: 5.5rem 0;
+  background-color: var(--color-white);
+  position: relative;
+}
+
+.student-life-container {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  align-items: center;
+  gap: 4rem;
+}
+
+/* Left Gallery Column (2x2 Grid) */
+.life-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+.life-gallery-card {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 10px 24px rgba(8, 43, 80, 0.08);
+  border: 1px solid var(--color-border);
+  aspect-ratio: 4 / 3;
+  background-color: #EAF8F8;
+}
+
+.gallery-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-smooth);
+  display: block;
+}
+
+.life-gallery-card:hover .gallery-card-img {
+  transform: scale(1.06);
+}
+
+.gallery-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(7, 91, 96, 0) 45%, rgba(7, 63, 70, 0.88) 100%);
+  display: flex;
+  align-items: flex-end;
+  padding: 1rem;
+  transition: opacity var(--transition-fast);
+}
+
+.gallery-card-title {
+  color: var(--color-white);
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1.3;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Right Content Column */
+.life-content-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.life-description {
+  font-size: 1.05rem;
+  color: var(--color-body);
+  line-height: 1.65;
+  margin-bottom: 2rem;
+}
+
+.life-features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 2.25rem;
+}
+
+.life-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.life-feature-icon-box {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-md);
+  background-color: var(--color-light-aqua); /* #EAF8F8 */
+  color: var(--color-primary-teal); /* #48AAAD */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 1px solid rgba(72, 170, 173, 0.2);
+  transition: all var(--transition-fast);
+}
+
+.life-feature-item:hover .life-feature-icon-box {
+  background-color: var(--color-primary-teal);
+  color: var(--color-white);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(72, 170, 173, 0.25);
+}
+
+.life-feature-title {
+  font-size: 1.02rem;
+  font-weight: 800;
+  color: var(--color-dark-navy); /* #082B50 */
+  line-height: 1.3;
+  margin-bottom: 0.25rem;
+}
+
+.life-feature-desc {
+  font-size: 0.88rem;
+  color: var(--color-body);
+  line-height: 1.5;
+}
+
+.life-cta-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.btn-life-explore {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--color-primary-teal); /* #48AAAD */
+  color: var(--color-white);
+  padding: 0.95rem 2rem;
+  font-size: 0.96rem;
+  font-weight: 700;
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(72, 170, 173, 0.28);
+  transition: all var(--transition-fast);
+}
+
+.btn-life-explore:hover {
+  background-color: var(--color-deep-teal); /* #075B60 */
+  box-shadow: 0 10px 24px rgba(7, 91, 96, 0.35);
+  transform: translateY(-2px);
+}
+
+.btn-life-explore:hover .btn-arrow {
+  transform: translateX(4px);
+}
+
+/* Responsive */
+@media (max-width: 1080px) {
+  .student-life-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .life-gallery-column {
+    max-width: 650px;
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .student-life-section {
+    padding: 3.5rem 0;
+  }
+
+  .life-gallery-grid {
+    gap: 0.85rem;
+  }
+
+  .life-features-list {
+    gap: 1rem;
+  }
+}

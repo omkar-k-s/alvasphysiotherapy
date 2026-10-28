@@ -137,7 +137,7 @@ export default function Header() {
           <a href="#home" className="header-logo" aria-label="Alva's Physiotherapy Home">
             <div className="logo-emblem-box">
               <img
-                src="/alvas-logo.png?v=3"
+                src="/alvas-logo.png?v=4"
                 alt="Alva's Education Foundation Emblem"
                 className="logo-crest"
               />
@@ -175,7 +175,7 @@ export default function Header() {
                       {item.hasDropdown && (
                         <ChevronDown
                           className={`nav-chevron ${isOpen ? 'rotate-chevron' : ''}`}
-                          size={16}
+                          size={14}
                           strokeWidth={2.4}
                           aria-hidden="true"
                         />
@@ -232,7 +232,7 @@ export default function Header() {
         <div className="mobile-nav-inner">
           <div className="mobile-drawer-header">
             <div className="mobile-logo">
-              <img src="/alvas-logo.png?v=3" alt="Alva's Logo" className="mobile-crest" />
+              <img src="/alvas-logo.png?v=4" alt="Alva's Logo" className="mobile-crest" />
               <div className="mobile-logo-text">
                 <span className="mobile-logo-title">ALVA'S</span>
                 <span className="mobile-logo-sub">PHYSIOTHERAPY</span>

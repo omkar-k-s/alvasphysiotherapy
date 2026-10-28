@@ -2,14 +2,15 @@
   /* Exact Teal Design Palette */
   --color-primary-teal: #48AAAD;
   --color-deep-teal: #075B60;
+  --color-dark-navy: #082B50;
   --color-header-teal: #168F95;
-  --color-dark-teal: #073F46;
+  --color-dark-teal: #082B50; /* Headings in dark navy */
   --color-light-aqua: #EAF8F8;
   --color-page-bg: #F7FCFC;
   --color-white: #FFFFFF;
   --color-orange: #FF7900;
   --color-gold: #FFC928;
-  --color-body: #526B7B;
+  --color-body: #4A6375;
   --color-border: #DCEBEC;
   --color-border-subtle: #E8F3F3;
 
