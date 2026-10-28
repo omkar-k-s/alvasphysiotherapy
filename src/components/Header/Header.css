@@ -104,8 +104,8 @@
   text-decoration: none;
   flex-shrink: 0;
   width: auto;
-  min-width: 200px;
-  max-width: 240px; /* ~220–240px logo width */
+  min-width: 210px;
+  max-width: 265px;
   transition: opacity var(--transition-fast), transform var(--transition-fast);
 }
 
@@ -115,21 +115,21 @@
 }
 
 .logo-emblem-box {
-  width: 62px;
-  height: 72px;
+  width: auto;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
   background: transparent; /* Clean transparent/white background */
   border-radius: var(--radius-sm);
-  padding: 2px;
+  padding: 0;
   border: none;
   box-shadow: none;
   flex-shrink: 0;
 }
 
 .logo-crest {
-  height: 64px;
+  height: 82px;
   width: auto;
   max-width: 100%;
   object-fit: contain;
@@ -201,14 +201,24 @@
 }
 
 .nav-link:hover {
-  color: #48AAAD; /* Teal hover */
-  background: rgba(72, 170, 173, 0.08);
+  color: #082B50;
+  background-color: #EAF8F8; /* Pale teal background on hover */
+}
+
+.nav-item.is-active .nav-link:hover {
+  color: #48AAAD;
+  background-color: #EAF8F8;
 }
 
 .nav-item.menu-open .nav-link {
-  color: #48AAAD;
-  background: rgba(72, 170, 173, 0.12);
+  color: #082B50;
+  background-color: #EAF8F8; /* Pale teal background for expanded tab */
   border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+}
+
+.nav-item.menu-open.is-active .nav-link {
+  color: #48AAAD;
+  background-color: #EAF8F8;
 }
 
 /* Active Tab Indicator (HOME in Teal #48AAAD) */
@@ -230,8 +240,8 @@
 }
 
 .nav-chevron {
-  transition: transform var(--transition-normal), color var(--transition-fast);
-  color: #082B50; /* Dark Navy dropdown arrows */
+  transition: transform var(--transition-normal);
+  color: #082B50; /* Keep dropdown arrows dark navy */
   flex-shrink: 0;
   margin-left: 2px;
   display: inline-block;
@@ -240,7 +250,7 @@
 
 .nav-item:hover .nav-chevron,
 .nav-item.menu-open .nav-chevron {
-  color: #48AAAD;
+  color: #082B50; /* Keep dropdown arrows dark navy */
 }
 
 .rotate-chevron {
@@ -255,9 +265,9 @@
   top: 100%; /* Placed directly below the 114px navbar */
   left: 0;
   min-width: 280px;
-  background-color: var(--color-deep-teal); /* #075B60 */
-  border-top: 3px solid #48AAAD; /* Teal top accent */
-  border-radius: 0 0 var(--radius-md) var(--radius-md);
+  background-color: #075B60; /* Deep teal #075B60 */
+  border-top: 2.5px solid #48AAAD; /* Subtle teal top border #48AAAD */
+  border-radius: 0 0 10px 10px; /* Rounded bottom corners */
   box-shadow: 0 18px 40px rgba(7, 63, 70, 0.35), 0 6px 12px rgba(0, 0, 0, 0.15);
   opacity: 0;
   visibility: hidden;
@@ -290,12 +300,12 @@
 
 .dropdown-list {
   list-style: none;
-  padding: 0.5rem 0;
+  padding: 0.4rem 0;
   margin: 0;
 }
 
 .dropdown-item {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12); /* Fine separators */
 }
 
 .dropdown-item:last-child {
@@ -306,11 +316,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.95rem 1.4rem;
-  color: #F0FBFB;
-  font-size: 15.5px; /* 15–16px submenu text */
+  padding: 0.92rem 1.4rem; /* Comfortable padding */
+  color: #FFFFFF; /* Pure white text */
+  font-size: 15.5px; /* 15–16px readable text */
   font-weight: 600;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.025em;
   text-transform: uppercase;
   line-height: 1.45;
   transition: all var(--transition-fast);
@@ -321,7 +331,7 @@
   flex: 1;
   white-space: normal;
   word-break: normal;
-  overflow-wrap: break-word;
+  overflow-wrap: break-word; /* Ensure long submenu labels wrap properly */
 }
 
 .dropdown-arrow-hover {
@@ -335,8 +345,8 @@
 
 .dropdown-link:hover,
 .dropdown-link:focus {
-  background-color: var(--color-header-teal); /* #168F95 */
-  color: var(--color-white);
+  background-color: #116F73; /* Slightly lighter teal hover background #116F73 */
+  color: #FFFFFF;
   border-left-color: #48AAAD;
   padding-left: 1.65rem;
 }
@@ -658,12 +668,12 @@
 
   .logo-emblem-box {
     width: 48px;
-    height: 54px;
-    padding: 2px;
+    height: 64px;
+    padding: 0;
   }
 
   .logo-crest {
-    height: 46px;
+    height: 62px;
   }
 
   .logo-title {
@@ -688,11 +698,12 @@
 
   .logo-emblem-box {
     width: 42px;
-    height: 48px;
+    height: 56px;
+    padding: 0;
   }
 
   .logo-crest {
-    height: 40px;
+    height: 54px;
   }
 
   .logo-title {

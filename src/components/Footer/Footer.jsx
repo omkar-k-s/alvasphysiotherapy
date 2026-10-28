@@ -11,7 +11,7 @@ export default function Footer() {
           <div className="footer-col col-brand">
             <div className="footer-brand">
               <div className="footer-logo-box">
-                <img src="/alvas-logo.png" alt="Alva's Logo" className="footer-crest" />
+                <img src="/alvas-logo.png?v=3" alt="Alva's Logo" className="footer-crest" />
               </div>
               <div className="footer-brand-title">
                 <span className="brand-primary">ALVA'S</span>
