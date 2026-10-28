@@ -1,0 +1,110 @@
+export const navigationItems = [
+  {
+    id: 'home',
+    label: 'HOME',
+    href: '#home',
+    hasDropdown: false,
+    isActive: true,
+  },
+  {
+    id: 'about-us',
+    label: 'ABOUT US',
+    href: '#about-us',
+    hasDropdown: true,
+    submenus: [
+      { id: 'aef', label: 'AEF', href: '#aef' },
+      { id: 'acp', label: 'ACP', href: '#acp' },
+      { id: 'accreditations', label: 'ACCREDITATIONS', href: '#accreditations' },
+      { id: 'chairman', label: 'CHAIRMAN', href: '#chairman' },
+      { id: 'principal', label: 'PRINCIPAL', href: '#principal' },
+    ],
+  },
+  {
+    id: 'courses',
+    label: 'COURSES',
+    href: '#courses',
+    hasDropdown: true,
+    submenus: [
+      { id: 'bpt', label: 'BACHELOR OF PHYSIOTHERAPY', href: '#bpt' },
+      { id: 'mpt', label: 'MASTER OF PHYSIOTHERAPY', href: '#mpt' },
+      { id: 'phd', label: 'PHD IN PHYSIOTHERAPY', href: '#phd' },
+    ],
+  },
+  {
+    id: 'life-at-alvas',
+    label: "LIFE @ ALVA'S",
+    href: '#life-at-alvas',
+    hasDropdown: true,
+    submenus: [
+      { id: 'fitness-clubs', label: 'FITNESS CLUBS', href: '#fitness-clubs' },
+      { id: 'central-library', label: 'CENTRAL LIBRARY', href: '#central-library' },
+      { id: 'sports', label: 'SPORTS', href: '#sports' },
+      { id: 'academics', label: 'ACADEMICS', href: '#academics' },
+      { id: 'farewell-day', label: 'FAREWELL DAY', href: '#farewell-day' },
+      { id: 'facilities', label: 'FACILITIES', href: '#facilities' },
+      { id: 'cultural-activities', label: 'CULTURAL ACTIVITIES', href: '#cultural-activities' },
+      { id: 'graduation-day', label: 'GRADUATION DAY', href: '#graduation-day' },
+      { id: 'photo-gallery', label: 'PHOTO GALLERY', href: '#photo-gallery' },
+    ],
+  },
+  {
+    id: 'department',
+    label: 'DEPARTMENT',
+    href: '#department',
+    hasDropdown: true,
+    submenus: [
+      {
+        id: 'musculoskeletal-sports',
+        label: 'PHYSIOTHERAPY IN MUSCULOSKELETAL AND SPORTS CONDITIONS',
+        href: '#musculoskeletal-sports',
+      },
+      {
+        id: 'neurological-psychosomatic',
+        label: 'PHYSIOTHERAPY IN NEUROLOGICAL AND PSYCHOSOMATIC DISORDERS',
+        href: '#neurological-psychosomatic',
+      },
+      {
+        id: 'cardio-respiratory',
+        label: 'PHYSIOTHERAPY IN CARDIO - RESPIRATORY CONDITIONS',
+        href: '#cardio-respiratory',
+      },
+      {
+        id: 'paediatric',
+        label: 'PHYSIOTHERAPY IN PAEDIATRIC CONDITIONS',
+        href: '#paediatric',
+      },
+      {
+        id: 'community-physiotherapy',
+        label: 'COMMUNITY PHYSIOTHERAPY',
+        href: '#community-physiotherapy',
+      },
+    ],
+  },
+  {
+    id: 'admission',
+    label: 'ADMISSION',
+    href: '#admission',
+    hasDropdown: true,
+    submenus: [
+      { id: 'admission-procedures', label: 'ADMISSION PROCEDURES', href: '#admission-procedures' },
+      { id: 'registration', label: 'REGISTRATION', href: '#registration' },
+    ],
+  },
+  {
+    id: 'student-portal',
+    label: 'STUDENT PORTAL',
+    href: '#student-portal',
+    hasDropdown: true,
+    submenus: [
+      { id: 'anti-ragging-committee', label: 'ANTI RAGGING COMMITTEE', href: '#anti-ragging-committee' },
+      { id: 'anti-ragging-affidavit', label: 'ANTI RAGGING AFFIDAVIT', href: '#anti-ragging-affidavit' },
+    ],
+  },
+  {
+    id: 'contact',
+    label: 'CONTACT',
+    href: '#contact',
+    hasDropdown: false,
+    isActive: false,
+  },
+];

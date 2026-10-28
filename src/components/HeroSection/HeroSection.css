@@ -1,0 +1,520 @@
+/* Hero Section */
+.hero-section {
+  position: relative;
+  background: linear-gradient(135deg, #F3F8FC 0%, #FFFFFF 55%, #EAF3FB 100%);
+  padding: 3.5rem 0 2.75rem;
+  overflow: hidden;
+}
+
+.hero-decorations {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.botanical-svg-top-left {
+  position: absolute;
+  top: -40px;
+  left: -40px;
+  width: 320px;
+  height: 400px;
+}
+
+.botanical-svg-top-right {
+  position: absolute;
+  top: 0;
+  right: -20px;
+  width: 260px;
+  height: 260px;
+}
+
+.hero-container {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: 3.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Left Column */
+.hero-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1.1rem;
+}
+
+.eyebrow-dash {
+  width: 26px;
+  height: 3px;
+  background-color: var(--color-orange);
+  border-radius: 2px;
+}
+
+.eyebrow-text {
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: #64748B;
+  text-transform: uppercase;
+}
+
+.hero-heading {
+  font-size: clamp(2.3rem, 3.6vw, 3.35rem);
+  font-weight: 800;
+  color: var(--color-navy-dark);
+  line-height: 1.18;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.02em;
+}
+
+.hero-highlight {
+  color: var(--color-orange);
+  display: inline;
+}
+
+.hero-meta-group {
+  margin-bottom: 2rem;
+}
+
+.hero-affiliate {
+  font-size: 1.05rem;
+  color: #475569;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.hero-since {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-orange);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* 4 Feature Highlights Grid */
+.hero-features-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 2.25rem;
+  padding: 1.25rem 0.5rem;
+  border-top: 1px solid rgba(226, 232, 240, 0.85);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.85);
+}
+
+.hero-feature-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
+}
+
+.feature-icon-wrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition-fast);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.hero-feature-item:hover .feature-icon-wrapper {
+  transform: translateY(-3px) scale(1.06);
+}
+
+.icon-blue {
+  background-color: #E6F3FB;
+  color: #1A73E8;
+}
+
+.icon-orange {
+  background-color: #FEF3EB;
+  color: #E65100;
+}
+
+.icon-red {
+  background-color: #FDE8E8;
+  color: #E53E3E;
+}
+
+.icon-green {
+  background-color: #E6F8ED;
+  color: #2E7D32;
+}
+
+.feature-text-block {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+
+.feature-primary-text {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--color-navy-dark);
+}
+
+.feature-secondary-text {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: #64748B;
+}
+
+/* CTA Buttons */
+.hero-cta-group {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.btn-primary-navy {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--color-navy-dark);
+  color: var(--color-white);
+  padding: 0.85rem 1.85rem;
+  font-size: 0.92rem;
+  font-weight: 700;
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 14px rgba(6, 38, 74, 0.25);
+  transition: all var(--transition-fast);
+}
+
+.btn-primary-navy:hover {
+  background-color: var(--color-navy-light);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(6, 38, 74, 0.35);
+}
+
+.btn-arrow {
+  transition: transform var(--transition-fast);
+}
+
+.btn-primary-navy:hover .btn-arrow {
+  transform: translateX(4px);
+}
+
+.btn-secondary-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--color-white);
+  color: var(--color-navy-dark);
+  padding: 0.85rem 1.65rem;
+  font-size: 0.92rem;
+  font-weight: 700;
+  border-radius: var(--radius-md);
+  border: 1.5px solid #CBD5E1;
+  transition: all var(--transition-fast);
+}
+
+.btn-secondary-outline:hover {
+  border-color: var(--color-orange);
+  color: var(--color-orange);
+  background-color: #FFF9F5;
+  transform: translateY(-2px);
+}
+
+.btn-arrow-orange {
+  color: var(--color-orange);
+  transition: transform var(--transition-fast);
+}
+
+.btn-secondary-outline:hover .btn-arrow-orange {
+  transform: translateX(4px);
+}
+
+/* Right Visual Collage */
+.hero-right {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-collage-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 630px;
+  min-height: 480px;
+}
+
+/* Main Campus Building */
+.main-campus-card {
+  width: 80%;
+  height: 450px;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 16px 36px rgba(6, 38, 74, 0.16);
+  border: 4px solid var(--color-white);
+  position: relative;
+}
+
+.campus-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 500ms ease;
+}
+
+.main-campus-card:hover .campus-img {
+  transform: scale(1.03);
+}
+
+/* Top Right Floating Treatment Card with Split Script */
+.floating-card-top {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  width: 58%;
+  height: 215px;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 18px 40px rgba(6, 38, 74, 0.22);
+  border: 4px solid var(--color-white);
+  background: var(--color-white);
+  z-index: 3;
+}
+
+.card-top-inner {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.treatment-script-panel {
+  width: 44%;
+  height: 100%;
+  background-color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 0.5rem 0.75rem 0.85rem;
+  position: relative;
+  z-index: 2;
+}
+
+.script-container {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.script-line-1,
+.script-line-2 {
+  font-family: var(--font-script);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0B355F;
+  letter-spacing: -0.01em;
+}
+
+.script-line-2 {
+  color: #1A548F;
+}
+
+.script-wave-separator {
+  position: absolute;
+  top: 0;
+  right: -10px;
+  width: 14px;
+  height: 100%;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.treatment-photo-panel {
+  width: 56%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.treatment-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 500ms ease;
+}
+
+.floating-card-top:hover .treatment-img {
+  transform: scale(1.06);
+}
+
+/* Bottom Right Floating Rehab Card */
+.floating-card-bottom {
+  position: absolute;
+  bottom: -22px;
+  right: 0px;
+  width: 55%;
+  height: 220px;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 18px 40px rgba(6, 38, 74, 0.22);
+  border: 4px solid var(--color-white);
+  background: var(--color-white);
+  z-index: 4;
+}
+
+.rehab-lab-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 500ms ease;
+}
+
+.floating-card-bottom:hover .rehab-lab-img {
+  transform: scale(1.06);
+}
+
+/* Excellence Badge */
+.excellence-badge {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background-color: var(--color-navy-dark);
+  color: var(--color-white);
+  padding: 8px 14px;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 2px solid var(--color-gold);
+  box-shadow: 0 8px 20px rgba(6, 38, 74, 0.45);
+  z-index: 5;
+}
+
+.badge-icon-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 201, 40, 0.16);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.badge-award-icon {
+  color: var(--color-gold);
+}
+
+.badge-text-content {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+  text-align: left;
+}
+
+.badge-title {
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #B5CCE5;
+}
+
+.badge-sub {
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: var(--color-white);
+}
+
+.badge-year {
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--color-gold);
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1100px) {
+  .hero-container {
+    gap: 2rem;
+  }
+  .hero-heading {
+    font-size: 2.3rem;
+  }
+}
+
+@media (max-width: 960px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .hero-left {
+    text-align: center;
+    align-items: center;
+  }
+  .hero-eyebrow {
+    justify-content: center;
+  }
+  .hero-cta-group {
+    justify-content: center;
+  }
+  .hero-collage-wrapper {
+    max-width: 520px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-features-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem 0.75rem;
+  }
+  .hero-collage-wrapper {
+    min-height: 380px;
+  }
+  .main-campus-card {
+    width: 90%;
+    height: 320px;
+  }
+  .floating-card-top {
+    width: 70%;
+    height: 160px;
+    right: 0;
+  }
+  .treatment-script-panel {
+    padding: 0.5rem;
+  }
+  .script-line-1,
+  .script-line-2 {
+    font-size: 0.95rem;
+  }
+  .floating-card-bottom {
+    width: 65%;
+    height: 160px;
+  }
+  .excellence-badge {
+    padding: 5px 10px;
+    bottom: 8px;
+    right: 8px;
+  }
+  .badge-sub, .badge-title {
+    font-size: 0.55rem;
+  }
+  .hero-cta-group {
+    flex-direction: column;
+    width: 100%;
+  }
+  .btn-primary-navy,
+  .btn-secondary-outline {
+    width: 100%;
+    justify-content: center;
+  }
+}
