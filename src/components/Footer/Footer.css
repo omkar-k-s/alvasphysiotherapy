@@ -1,9 +1,12 @@
-/* Footer */
+/* ==========================================================================
+   Footer Section (Teal Modern Theme)
+   ========================================================================== */
+
 .site-footer {
-  background-color: var(--color-navy-dark);
-  color: #D3DFEE;
+  background-color: var(--color-deep-teal); /* #075B60 */
+  color: #E0F5F6;
   padding: 4.5rem 0 2rem;
-  border-top: 3px solid var(--color-gold);
+  border-top: 3px solid var(--color-gold); /* #FFC928 */
   position: relative;
   z-index: 20;
 }
@@ -30,13 +33,13 @@
 .footer-logo-box {
   width: 44px;
   height: 48px;
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.12);
   border-radius: var(--radius-sm);
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 3px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .footer-crest {
@@ -62,13 +65,13 @@
   font-size: 0.65rem;
   font-weight: 700;
   letter-spacing: 0.15em;
-  color: var(--color-orange);
+  color: var(--color-gold);
 }
 
 .footer-about-text {
   font-size: 0.88rem;
   line-height: 1.65;
-  color: #A0B6D1;
+  color: #B2E5E7;
   margin-bottom: 1.25rem;
 }
 
@@ -76,8 +79,8 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  background: rgba(255, 201, 40, 0.1);
-  border: 1px solid rgba(255, 201, 40, 0.25);
+  background: rgba(255, 201, 40, 0.12);
+  border: 1px solid rgba(255, 201, 40, 0.3);
   border-radius: var(--radius-sm);
   padding: 0.6rem 0.85rem;
   font-size: 0.78rem;
@@ -106,7 +109,7 @@
   bottom: 0;
   left: 0;
   width: 28px;
-  height: 2px;
+  height: 2.5px;
   background-color: var(--color-orange);
 }
 
@@ -120,8 +123,8 @@
 }
 
 .footer-links-list a {
-  font-size: 0.85rem;
-  color: #A0B6D1;
+  font-size: 0.86rem;
+  color: #C8ECEE;
   transition: all var(--transition-fast);
   display: inline-block;
 }
@@ -141,9 +144,9 @@
   display: flex;
   align-items: flex-start;
   gap: 10px;
-  font-size: 0.85rem;
+  font-size: 0.86rem;
   line-height: 1.5;
-  color: #A0B6D1;
+  color: #C8ECEE;
 }
 
 .contact-icon {
@@ -154,7 +157,7 @@
 
 /* Footer Bottom */
 .footer-bottom-bar {
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding-top: 2rem;
   display: flex;
   align-items: center;
@@ -162,7 +165,7 @@
   flex-wrap: wrap;
   gap: 1rem;
   font-size: 0.82rem;
-  color: #7E97B8;
+  color: #9FDADB;
 }
 
 .footer-bottom-links {
@@ -172,7 +175,7 @@
 }
 
 .footer-bottom-links a {
-  color: #A0B6D1;
+  color: #C8ECEE;
   transition: color var(--transition-fast);
 }
 
@@ -181,7 +184,7 @@
 }
 
 .dot-sep {
-  color: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.25);
 }
 
 /* Responsive */

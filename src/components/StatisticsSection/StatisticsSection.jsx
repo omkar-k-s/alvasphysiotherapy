@@ -9,24 +9,28 @@ export default function StatisticsSection() {
       value: '30+',
       label: 'Years of Excellence',
       icon: <GraduationCap size={28} />,
+      colorClass: 'stat-green',
     },
     {
       id: 2,
       value: '1000+',
       label: 'Alumni Network',
       icon: <Users2 size={28} />,
+      colorClass: 'stat-orange',
     },
     {
       id: 3,
       value: '3',
       label: 'Programs Offered',
       icon: <BookOpen size={28} />,
+      colorClass: 'stat-red',
     },
     {
       id: 4,
       value: 'Modern',
       label: 'Labs & Infrastructure',
       icon: <Building2 size={28} />,
+      colorClass: 'stat-teal',
     },
   ];
 
@@ -37,7 +41,7 @@ export default function StatisticsSection() {
           <div className="stats-grid">
             {stats.map((item, index) => (
               <div key={item.id} className="stat-item">
-                <div className="stat-icon-circle">
+                <div className={`stat-icon-circle ${item.colorClass}`}>
                   {item.icon}
                 </div>
                 <div className="stat-info">

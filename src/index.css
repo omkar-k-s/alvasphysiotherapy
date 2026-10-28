@@ -1,18 +1,26 @@
 :root {
-  --color-navy-dark: #06264A;
-  --color-navy-primary: #0B355F;
-  --color-navy-light: #0e3c6d;
-  --color-navy-hover: #134b82;
-  --color-orange: #F36B21;
-  --color-orange-hover: #e05a12;
-  --color-gold: #FFC928;
+  /* Exact Teal Design Palette */
+  --color-primary-teal: #48AAAD;
+  --color-deep-teal: #075B60;
+  --color-header-teal: #168F95;
+  --color-dark-teal: #073F46;
+  --color-light-aqua: #EAF8F8;
+  --color-page-bg: #F7FCFC;
   --color-white: #FFFFFF;
-  --color-bg-light: #F3F8FC;
-  --color-bg-subtle: #F8FAFC;
-  --color-body: #425466;
-  --color-text-dark: #1E293B;
-  --color-border: #E2E8F0;
-  --color-border-subtle: #EDF2F7;
+  --color-orange: #FF7900;
+  --color-gold: #FFC928;
+  --color-body: #526B7B;
+  --color-border: #DCEBEC;
+  --color-border-subtle: #E8F3F3;
+
+  /* Legacy mappings for components */
+  --color-navy-dark: #075B60;
+  --color-navy-primary: #073F46;
+  --color-navy-light: #168F95;
+  --color-navy-hover: #05484C;
+  --color-bg-light: #F7FCFC;
+  --color-bg-subtle: #EAF8F8;
+  --color-text-dark: #073F46;
 
   /* Typography */
   --font-main: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
@@ -20,11 +28,11 @@
   --font-script: 'Caveat', cursive;
 
   /* Shadows */
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
-  --shadow-md: 0 4px 6px -1px rgba(6, 38, 74, 0.08), 0 2px 4px -1px rgba(6, 38, 74, 0.04);
-  --shadow-lg: 0 10px 25px -3px rgba(6, 38, 74, 0.1), 0 4px 6px -2px rgba(6, 38, 74, 0.05);
-  --shadow-xl: 0 20px 35px -5px rgba(6, 38, 74, 0.14), 0 10px 10px -5px rgba(6, 38, 74, 0.04);
-  --shadow-dropdown: 0 14px 28px rgba(6, 38, 74, 0.35), 0 10px 10px rgba(6, 38, 74, 0.22);
+  --shadow-sm: 0 1px 3px rgba(7, 91, 96, 0.06), 0 1px 2px rgba(7, 91, 96, 0.04);
+  --shadow-md: 0 4px 6px -1px rgba(7, 91, 96, 0.08), 0 2px 4px -1px rgba(7, 91, 96, 0.04);
+  --shadow-lg: 0 10px 25px -3px rgba(7, 91, 96, 0.1), 0 4px 6px -2px rgba(7, 91, 96, 0.05);
+  --shadow-xl: 0 20px 35px -5px rgba(7, 91, 96, 0.14), 0 10px 10px -5px rgba(7, 91, 96, 0.04);
+  --shadow-dropdown: 0 16px 36px rgba(7, 63, 70, 0.35), 0 6px 12px rgba(0, 0, 0, 0.15);
 
   /* Radius */
   --radius-sm: 6px;
@@ -52,7 +60,7 @@ html {
 
 body {
   font-family: var(--font-main);
-  background-color: var(--color-bg-light);
+  background-color: var(--color-page-bg);
   color: var(--color-body);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
@@ -63,7 +71,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
-  color: var(--color-navy-dark);
+  color: var(--color-dark-teal);
   font-weight: 700;
   line-height: 1.25;
 }
@@ -84,29 +92,6 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
-}
-
-/* Botanical Decorative Watermark SVG */
-.botanical-bg-left {
-  position: absolute;
-  top: 80px;
-  left: 0;
-  width: 320px;
-  height: 480px;
-  pointer-events: none;
-  z-index: 0;
-  opacity: 0.45;
-}
-
-.botanical-bg-bottom-left {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 280px;
-  height: 380px;
-  pointer-events: none;
-  z-index: 0;
-  opacity: 0.35;
 }
 
 /* Accessibility Focus States */

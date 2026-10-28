@@ -1,25 +1,97 @@
-/* Header Styling */
+/* ==========================================================================
+   Two-Tier Header Styling (Teal Modern Institutional Design)
+   ========================================================================== */
+
 .site-header {
   position: sticky;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: var(--color-navy-dark);
-  color: var(--color-white);
   z-index: 1000;
-  box-shadow: 0 4px 24px rgba(6, 38, 74, 0.35);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  transition: background-color var(--transition-normal);
+  box-shadow: 0 4px 24px rgba(7, 63, 70, 0.25);
+  transition: all var(--transition-normal);
+}
+
+/* --------------------------------------------------------------------------
+   Tier 1: Institutional Information Bar
+   -------------------------------------------------------------------------- */
+.top-info-bar {
+  background-color: var(--color-deep-teal); /* #075B60 */
+  color: var(--color-white);
+  height: 50px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 0.84rem;
+  letter-spacing: 0.015em;
+}
+
+.info-bar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+  padding-left: clamp(1.5rem, 5.5vw, 6.5rem);
+  padding-right: clamp(1.5rem, 5.5vw, 6.5rem);
+}
+
+.info-bar-left,
+.info-bar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.info-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  white-space: nowrap;
+  color: #F0FBFB;
+}
+
+.info-icon {
+  color: #B2E5E7;
+  flex-shrink: 0;
+}
+
+.info-code-gold {
+  color: var(--color-gold); /* #FFC928 */
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.info-divider {
+  color: rgba(255, 255, 255, 0.3);
+  font-weight: 300;
+  font-size: 0.9rem;
+}
+
+.info-link {
+  color: #F0FBFB;
+  transition: color var(--transition-fast);
+}
+
+.info-link:hover {
+  color: var(--color-gold);
+}
+
+/* --------------------------------------------------------------------------
+   Tier 2: Main Navigation Bar
+   -------------------------------------------------------------------------- */
+.main-nav-bar {
+  background: linear-gradient(90deg, #168F95 0%, #127E84 100%);
+  color: var(--color-white);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .header-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 116px; /* 110–120px desktop navbar height */
+  height: 114px; /* 110–115px desktop navbar height */
   position: relative;
   width: 100%;
-  padding-left: clamp(1.5rem, 5.5vw, 6.5rem); /* 5–7% of viewport width */
+  padding-left: clamp(1.5rem, 5.5vw, 6.5rem);
   padding-right: clamp(1.5rem, 5.5vw, 6.5rem);
 }
 
@@ -31,13 +103,13 @@
   text-decoration: none;
   flex-shrink: 0;
   width: auto;
-  min-width: 195px;
-  max-width: 220px; /* ~190–220px logo width */
+  min-width: 200px;
+  max-width: 240px; /* ~220–240px logo width */
   transition: opacity var(--transition-fast), transform var(--transition-fast);
 }
 
 .header-logo:hover {
-  opacity: 0.95;
+  opacity: 0.96;
   transform: translateY(-1px);
 }
 
@@ -47,11 +119,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.07);
+  background: rgba(255, 255, 255, 0.12);
   border-radius: var(--radius-sm);
   padding: 3px;
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   flex-shrink: 0;
 }
 
@@ -81,13 +153,13 @@
   font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.22em;
-  color: var(--color-orange);
+  color: var(--color-gold); /* Gold matching reference logo subtitle */
   text-transform: uppercase;
   margin-top: 5px;
   line-height: 1;
 }
 
-/* Desktop Navigation */
+/* Desktop Main Navigation */
 .desktop-navigation {
   display: flex;
   align-items: center;
@@ -116,25 +188,25 @@
   align-items: center;
   gap: 5px;
   padding: 0.7rem 0.85rem;
-  color: #D3DFEE;
-  font-size: 16px; /* 16–18px desktop navigation text */
+  color: #FFFFFF;
+  font-size: 16px; /* 16–18px semibold/bold */
   font-weight: 650;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   border-radius: var(--radius-sm);
-  transition: color var(--transition-fast), background-color var(--transition-fast), transform var(--transition-fast);
+  transition: color var(--transition-fast), background-color var(--transition-fast);
   position: relative;
   white-space: nowrap;
 }
 
 .nav-link:hover {
   color: var(--color-white);
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.12);
 }
 
 .nav-item.menu-open .nav-link {
   color: var(--color-gold);
-  background: #051E3A;
+  background: var(--color-deep-teal); /* Connects seamlessly with dropdown */
   border-radius: var(--radius-sm) var(--radius-sm) 0 0;
 }
 
@@ -150,15 +222,15 @@
   bottom: 8px;
   left: 14px;
   right: 14px;
-  height: 3px;
-  background: linear-gradient(90deg, #FFC928 0%, #F36B21 100%);
+  height: 3.5px;
+  background: linear-gradient(90deg, #FFC928 0%, #FF7900 100%);
   border-radius: 3px;
-  box-shadow: 0 0 10px rgba(255, 201, 40, 0.55);
+  box-shadow: 0 0 10px rgba(255, 201, 40, 0.65);
 }
 
 .nav-chevron {
   transition: transform var(--transition-normal), color var(--transition-fast);
-  color: #A0B6D1;
+  color: #FFFFFF;
   flex-shrink: 0;
   margin-left: 2px;
   display: inline-block;
@@ -174,16 +246,18 @@
   transform: rotate(180deg);
 }
 
-/* Dropdown Menus */
+/* --------------------------------------------------------------------------
+   Dropdown Menus (Deep Teal Theme)
+   -------------------------------------------------------------------------- */
 .dropdown-menu {
   position: absolute;
-  top: 100%; /* Placed directly below the enlarged 116px navbar */
+  top: 100%; /* Placed directly below the 114px navbar */
   left: 0;
   min-width: 280px;
-  background-color: #051E3A;
+  background-color: var(--color-deep-teal); /* #075B60 */
   border-top: 3px solid var(--color-gold);
   border-radius: 0 0 var(--radius-md) var(--radius-md);
-  box-shadow: 0 16px 36px rgba(4, 25, 51, 0.45), 0 4px 12px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 18px 40px rgba(7, 63, 70, 0.45), 0 6px 12px rgba(0, 0, 0, 0.2);
   opacity: 0;
   visibility: hidden;
   transform: translateY(8px);
@@ -220,7 +294,7 @@
 }
 
 .dropdown-item {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .dropdown-item:last-child {
@@ -232,7 +306,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 0.95rem 1.4rem;
-  color: #E2ECF7;
+  color: #F0FBFB;
   font-size: 15.5px; /* 15–16px submenu text */
   font-weight: 600;
   letter-spacing: 0.03em;
@@ -260,7 +334,7 @@
 
 .dropdown-link:hover,
 .dropdown-link:focus {
-  background-color: #0E3C6D;
+  background-color: var(--color-header-teal); /* #168F95 */
   color: var(--color-white);
   border-left-color: var(--color-gold);
   padding-left: 1.65rem;
@@ -272,21 +346,22 @@
   transform: translateX(0);
 }
 
-/* Mobile Toggle Button */
+/* --------------------------------------------------------------------------
+   Mobile Navigation & Drawer
+   -------------------------------------------------------------------------- */
 .mobile-toggle-btn {
   display: none;
   color: var(--color-white);
   padding: 10px;
   border-radius: var(--radius-sm);
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.12);
   transition: background-color var(--transition-fast);
 }
 
 .mobile-toggle-btn:hover {
-  background: rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.2);
 }
 
-/* Mobile Drawer */
 .mobile-nav-drawer {
   position: fixed;
   top: 0;
@@ -294,7 +369,7 @@
   width: 100%;
   max-width: 380px;
   height: 100vh;
-  background-color: var(--color-navy-dark);
+  background-color: var(--color-deep-teal);
   z-index: 2000;
   box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
   transition: right 300ms cubic-bezier(0.16, 1, 0.3, 1);
@@ -317,8 +392,8 @@
   align-items: center;
   justify-content: space-between;
   padding-bottom: 1.25rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  margin-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  margin-bottom: 0.75rem;
 }
 
 .mobile-logo {
@@ -333,16 +408,30 @@
   object-fit: contain;
 }
 
+.mobile-logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
 .mobile-logo-title {
   font-family: var(--font-heading);
-  font-size: 1.05rem;
-  font-weight: 700;
+  font-size: 1.1rem;
+  font-weight: 800;
   color: var(--color-white);
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
+}
+
+.mobile-logo-sub {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--color-gold);
+  letter-spacing: 0.18em;
+  margin-top: 2px;
 }
 
 .mobile-close-btn {
-  color: #A0B6D1;
+  color: #B2E5E7;
   padding: 6px;
   border-radius: var(--radius-sm);
   transition: all var(--transition-fast);
@@ -350,7 +439,31 @@
 
 .mobile-close-btn:hover {
   color: var(--color-white);
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.mobile-drawer-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.mobile-meta-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.08);
+  font-size: 0.75rem;
+  color: #E0F5F6;
+}
+
+.mobile-meta-pill strong {
+  color: var(--color-gold);
 }
 
 .mobile-nav-list {
@@ -361,7 +474,7 @@
 }
 
 .mobile-nav-item {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .mobile-nav-link,
@@ -371,7 +484,7 @@
   justify-content: space-between;
   width: 100%;
   padding: 1rem 0.6rem;
-  color: #D3DFEE;
+  color: #F0FBFB;
   font-size: 15.5px;
   font-weight: 600;
   letter-spacing: 0.04em;
@@ -393,13 +506,13 @@
 .mobile-submenu-list {
   list-style: none;
   padding: 0.4rem 0 0.8rem 1rem;
-  background: rgba(0, 0, 0, 0.22);
+  background: rgba(0, 0, 0, 0.2);
   border-radius: var(--radius-sm);
   margin-bottom: 0.5rem;
 }
 
 .mobile-submenu-item {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .mobile-submenu-item:last-child {
@@ -410,7 +523,7 @@
   display: block;
   padding: 0.7rem 0.85rem;
   font-size: 14.5px;
-  color: #B5CCE5;
+  color: #B2E5E7;
   line-height: 1.45;
   border-left: 2px solid transparent;
   transition: all var(--transition-fast);
@@ -423,14 +536,14 @@
 
 .mobile-nav-footer {
   padding-top: 1.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
   font-size: 0.8rem;
-  color: #8CA3C3;
+  color: #B2E5E7;
   line-height: 1.5;
 }
 
 .mobile-college-meta {
-  color: #A9BFDC;
+  color: #FFFFFF;
   font-weight: 500;
   margin-bottom: 4px;
 }
@@ -440,8 +553,11 @@
   font-weight: 600;
 }
 
-/* Responsive Breakpoints */
+/* --------------------------------------------------------------------------
+   Responsive Breakpoints
+   -------------------------------------------------------------------------- */
 @media (max-width: 1440px) {
+  .info-bar-container,
   .header-container {
     padding-left: 4vw;
     padding-right: 4vw;
@@ -457,9 +573,13 @@
 }
 
 @media (max-width: 1260px) {
+  .info-bar-container,
   .header-container {
     padding-left: 2.5vw;
     padding-right: 2.5vw;
+  }
+  .top-info-bar {
+    font-size: 0.8rem;
   }
   .header-logo {
     min-width: 185px;
@@ -492,8 +612,27 @@
   }
 }
 
-/* Switch cleanly to responsive hamburger menu rather than squeezing navigation */
+/* Tablet & Mobile: Switch info bar to scrollable or condensed & show hamburger */
 @media (max-width: 1100px) {
+  .top-info-bar {
+    height: auto;
+    padding: 8px 0;
+  }
+
+  .info-bar-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .info-bar-left,
+  .info-bar-right {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
   .desktop-navigation {
     display: none;
   }
@@ -504,11 +643,10 @@
     justify-content: center;
   }
 
-  /* Compact header on mobile/tablet so it doesn't consume excessive vertical space */
   .header-container {
     height: 80px;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
   }
 
   .header-logo {
@@ -536,7 +674,11 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 640px) {
+  .info-bar-right {
+    display: none; /* Keep mobile top bar clean and concise */
+  }
+
   .header-container {
     height: 74px;
     padding-left: 1rem;

@@ -15,46 +15,86 @@ export default function HeroSection() {
       id: 1,
       title: 'Evidence-Based',
       subtitle: 'Education',
-      icon: <BookOpenCheck size={20} />,
+      icon: <BookOpenCheck size={22} />,
       colorClass: 'icon-blue',
     },
     {
       id: 2,
       title: 'Experienced',
       subtitle: 'Faculty',
-      icon: <GraduationCap size={20} />,
+      icon: <GraduationCap size={22} />,
       colorClass: 'icon-orange',
     },
     {
       id: 3,
       title: 'Modern',
       subtitle: 'Infrastructure',
-      icon: <HeartPulse size={20} />,
+      icon: <HeartPulse size={22} />,
       colorClass: 'icon-red',
     },
     {
       id: 4,
       title: 'Holistic',
       subtitle: 'Student Development',
-      icon: <Users size={20} />,
+      icon: <Users size={22} />,
       colorClass: 'icon-green',
     },
   ];
 
   return (
     <section className="hero-section" id="home">
-      {/* Decorative Botanical Watermark SVGs */}
+      {/* Decorative Botanical Leaf Accents & Dot Patterns */}
       <div className="hero-decorations" aria-hidden="true">
-        <svg className="botanical-svg-top-left" viewBox="0 0 320 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M-20,180 C40,110 110,60 210,40 C140,90 90,160 50,250 Z" fill="#90CDF4" opacity="0.32" />
-          <path d="M-40,120 C20,70 90,30 180,10 C120,60 80,120 30,200 Z" fill="#63B3ED" opacity="0.28" />
-          <path d="M20,240 C90,190 160,150 260,140 C190,180 140,240 100,320 Z" fill="#BEE3F8" opacity="0.38" />
-          <path d="M60,310 C120,270 180,240 270,240 C210,270 170,320 140,390 Z" fill="#E2E8F0" opacity="0.4" />
+        {/* Top-left subtle teal organic flow */}
+        <svg className="hero-shape-top-left" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M-60,0 C80,60 160,180 180,320 C120,380 40,400 -60,400 Z" fill="#EAF8F8" opacity="0.8" />
+          <path d="M-100,-40 C40,20 100,120 120,240 C80,300 20,320 -100,320 Z" fill="#D5F0F1" opacity="0.5" />
         </svg>
 
-        <svg className="botanical-svg-top-right" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M280,40 C210,90 160,150 140,240 C180,170 240,120 310,90 Z" fill="#90CDF4" opacity="0.22" />
-          <path d="M220,10 C170,60 130,120 110,200 C150,140 200,90 270,60 Z" fill="#63B3ED" opacity="0.18" />
+        {/* Subtle Dotted Pattern Behind Heading */}
+        <div className="hero-dot-pattern"></div>
+
+        {/* Bottom-left lush green botanical leaves matching design reference */}
+        <svg className="botanical-leaves-bottom-left" viewBox="0 0 220 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+          {/* Main Leaf 1 */}
+          <path
+            d="M-40,280 C-10,220 20,160 85,110 C80,160 55,220 0,280 Z"
+            fill="#3FA363"
+            opacity="0.85"
+          />
+          <path d="M-20,270 Q25,180 82,112" stroke="#2D7B48" strokeWidth="2.5" strokeLinecap="round" />
+          
+          {/* Main Leaf 2 (Upper left) */}
+          <path
+            d="M-50,220 C-15,160 10,95 65,45 C55,100 25,165 -30,230 Z"
+            fill="#52B774"
+            opacity="0.78"
+          />
+          <path d="M-35,210 Q5,120 62,47" stroke="#378A52" strokeWidth="2" strokeLinecap="round" />
+
+          {/* Accent Leaf 3 (Small Sprout) */}
+          <path
+            d="M20,280 C50,240 85,210 140,195 C120,235 80,265 30,290 Z"
+            fill="#69C888"
+            opacity="0.75"
+          />
+          <path d="M30,275 Q80,225 137,196" stroke="#3FA363" strokeWidth="1.8" strokeLinecap="round" />
+        </svg>
+
+        {/* Right-side lush green botanical leaves */}
+        <svg className="botanical-leaves-right" viewBox="0 0 160 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M160,80 C110,110 80,160 70,220 C105,185 140,150 160,140 Z"
+            fill="#3FA363"
+            opacity="0.8"
+          />
+          <path d="M155,90 Q95,150 72,218" stroke="#2D7B48" strokeWidth="2.2" strokeLinecap="round" />
+          
+          <path
+            d="M160,20 C120,40 95,85 90,140 C120,105 148,70 160,60 Z"
+            fill="#52B774"
+            opacity="0.75"
+          />
         </svg>
       </div>
 
@@ -79,7 +119,7 @@ export default function HeroSection() {
             <p className="hero-since">Since 1995</p>
           </div>
 
-          {/* 4 Feature Highlights */}
+          {/* 4 Feature Highlights Grid */}
           <div className="hero-features-grid">
             {features.map((feat) => (
               <div key={feat.id} className="hero-feature-item">
@@ -96,11 +136,11 @@ export default function HeroSection() {
 
           {/* Action CTA Buttons */}
           <div className="hero-cta-group">
-            <a href="#courses" className="btn-primary-navy">
+            <a href="#courses" className="btn-primary-teal">
               <span>Explore Our Courses</span>
               <ArrowRight size={18} className="btn-arrow" />
             </a>
-            <a href="#about-us" className="btn-secondary-outline">
+            <a href="#about-us" className="btn-secondary-teal">
               <span>About Us</span>
               <ArrowRight size={18} className="btn-arrow-orange" />
             </a>
@@ -119,18 +159,15 @@ export default function HeroSection() {
               />
             </div>
 
-            {/* Top Right Floating Treatment Card with Split Script Wave */}
+            {/* Top Right Floating Treatment Card with Split Script */}
             <div className="floating-card-top">
               <div className="card-top-inner">
                 <div className="treatment-script-panel">
                   <div className="script-container">
                     <p className="script-line-1">Restoring Movement</p>
                     <p className="script-line-2">Building Healthier Lives</p>
+                    <div className="script-orange-bar" aria-hidden="true"></div>
                   </div>
-                  {/* Organic wave shape */}
-                  <svg className="script-wave-separator" viewBox="0 0 20 100" preserveAspectRatio="none" aria-hidden="true">
-                    <path d="M0,0 Q18,50 0,100 L20,100 L20,0 Z" fill="#ffffff" />
-                  </svg>
                 </div>
                 <div className="treatment-photo-panel">
                   <img
@@ -150,7 +187,7 @@ export default function HeroSection() {
                 className="rehab-lab-img"
               />
               
-              {/* Circular Excellence Badge */}
+              {/* Circular Excellence Badge in Deep Teal & Gold */}
               <div className="excellence-badge">
                 <div className="badge-icon-circle">
                   <Award size={20} className="badge-award-icon" />

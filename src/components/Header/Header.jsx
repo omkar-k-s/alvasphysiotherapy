@@ -1,6 +1,17 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { navigationItems } from '../../data/navigationData';
-import { ChevronDown, Menu, X, ArrowRight } from 'lucide-react';
+import { institutionalInfo } from '../../data/institutionalData';
+import {
+  Building2,
+  Phone,
+  Mail,
+  Award,
+  ShieldCheck,
+  ChevronDown,
+  Menu,
+  X,
+  ArrowRight,
+} from 'lucide-react';
 import './Header.css';
 
 export default function Header() {
@@ -22,7 +33,7 @@ export default function Header() {
     }
   };
 
-  // Handle desktop mouse leave with slight delay for smooth ergonomics
+  // Handle desktop mouse leave with slight delay for ergonomics
   const handleMouseLeave = () => {
     closeTimeoutRef.current = setTimeout(() => {
       setActiveDropdown(null);
@@ -79,98 +90,141 @@ export default function Header() {
 
   return (
     <header className="site-header" ref={navRef}>
-      <div className="header-container">
-        {/* Brand / Logo */}
-        <a href="#home" className="header-logo" aria-label="Alva's Physiotherapy Home">
-          <div className="logo-emblem-box">
-            <img
-              src="/alvas-logo.png"
-              alt="Alva's Education Foundation Crest"
-              className="logo-crest"
-            />
+      {/* Tier 1: Institutional Information Bar */}
+      <div className="top-info-bar" role="complementary" aria-label="Institutional Information">
+        <div className="info-bar-container">
+          {/* Left Info Group */}
+          <div className="info-bar-left">
+            <div className="info-item">
+              <Building2 size={15} className="info-icon" aria-hidden="true" />
+              <span>College Code: <strong className="info-code-gold">{institutionalInfo.collegeCode}</strong></span>
+            </div>
+            <span className="info-divider" aria-hidden="true">|</span>
+            <div className="info-item">
+              <Phone size={14} className="info-icon" aria-hidden="true" />
+              <a href={`tel:${institutionalInfo.phone.split('/')[0].trim()}`} className="info-link">
+                {institutionalInfo.phone}
+              </a>
+            </div>
+            <span className="info-divider" aria-hidden="true">|</span>
+            <div className="info-item">
+              <Mail size={14} className="info-icon" aria-hidden="true" />
+              <a href={`mailto:${institutionalInfo.email}`} className="info-link">
+                {institutionalInfo.email}
+              </a>
+            </div>
           </div>
-          <div className="logo-text-group">
-            <span className="logo-title">ALVA'S</span>
-            <span className="logo-subtitle">PHYSIOTHERAPY</span>
+
+          {/* Right Info Group */}
+          <div className="info-bar-right">
+            <div className="info-item">
+              <Award size={15} className="info-icon" aria-hidden="true" />
+              <span>{institutionalInfo.affiliation}</span>
+            </div>
+            <span className="info-divider" aria-hidden="true">|</span>
+            <div className="info-item">
+              <ShieldCheck size={15} className="info-icon" aria-hidden="true" />
+              <span>{institutionalInfo.recognition}</span>
+            </div>
           </div>
-        </a>
+        </div>
+      </div>
 
-        {/* Desktop Main Navigation */}
-        <nav className="desktop-navigation" aria-label="Main Navigation">
-          <ul className="nav-list" role="menubar">
-            {navigationItems.map((item) => {
-              const isOpen = activeDropdown === item.id;
-              const isDepartment = item.id === 'department';
+      {/* Tier 2: Main Navigation Bar */}
+      <div className="main-nav-bar">
+        <div className="header-container">
+          {/* Brand / Logo */}
+          <a href="#home" className="header-logo" aria-label="Alva's Physiotherapy Home">
+            <div className="logo-emblem-box">
+              <img
+                src="/alvas-logo.png"
+                alt="Alva's Education Foundation Crest"
+                className="logo-crest"
+              />
+            </div>
+            <div className="logo-text-group">
+              <span className="logo-title">ALVA'S</span>
+              <span className="logo-subtitle">PHYSIOTHERAPY</span>
+            </div>
+          </a>
 
-              return (
-                <li
-                  key={item.id}
-                  className={`nav-item ${item.isActive ? 'is-active' : ''} ${isOpen ? 'menu-open' : ''}`}
-                  onMouseEnter={() => handleMouseEnter(item.id, item.hasDropdown)}
-                  onMouseLeave={handleMouseLeave}
-                  role="none"
-                >
-                  <a
-                    href={item.href}
-                    className={`nav-link ${item.isActive ? 'active-link' : ''}`}
-                    role="menuitem"
-                    aria-haspopup={item.hasDropdown ? 'true' : undefined}
-                    aria-expanded={item.hasDropdown ? isOpen : undefined}
-                    onClick={(e) => handleItemClick(e, item)}
+          {/* Desktop Main Navigation */}
+          <nav className="desktop-navigation" aria-label="Main Navigation">
+            <ul className="nav-list" role="menubar">
+              {navigationItems.map((item) => {
+                const isOpen = activeDropdown === item.id;
+                const isDepartment = item.id === 'department';
+
+                return (
+                  <li
+                    key={item.id}
+                    className={`nav-item ${item.isActive ? 'is-active' : ''} ${isOpen ? 'menu-open' : ''}`}
+                    onMouseEnter={() => handleMouseEnter(item.id, item.hasDropdown)}
+                    onMouseLeave={handleMouseLeave}
+                    role="none"
                   >
-                    <span>{item.label}</span>
-                    {item.hasDropdown && (
-                      <ChevronDown
-                        className={`nav-chevron ${isOpen ? 'rotate-chevron' : ''}`}
-                        size={16}
-                        strokeWidth={2.4}
-                        aria-hidden="true"
-                      />
-                    )}
-                  </a>
-
-                  {/* Dropdown Menu */}
-                  {item.hasDropdown && (
-                    <div
-                      className={`dropdown-menu ${isDepartment ? 'dropdown-department' : ''} ${
-                        isOpen ? 'is-visible' : ''
-                      }`}
-                      role="menu"
-                      aria-label={`${item.label} sub-menu`}
+                    <a
+                      href={item.href}
+                      className={`nav-link ${item.isActive ? 'active-link' : ''}`}
+                      role="menuitem"
+                      aria-haspopup={item.hasDropdown ? 'true' : undefined}
+                      aria-expanded={item.hasDropdown ? isOpen : undefined}
+                      onClick={(e) => handleItemClick(e, item)}
                     >
-                      <ul className="dropdown-list">
-                        {item.submenus.map((sub) => (
-                          <li key={sub.id} role="none" className="dropdown-item">
-                            <a
-                              href={sub.href}
-                              role="menuitem"
-                              className="dropdown-link"
-                              onClick={() => setActiveDropdown(null)}
-                            >
-                              <span className="dropdown-link-text">{sub.label}</span>
-                              <ArrowRight className="dropdown-arrow-hover" size={16} aria-hidden="true" />
-                            </a>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
-                </li>
-              );
-            })}
-          </ul>
-        </nav>
+                      <span>{item.label}</span>
+                      {item.hasDropdown && (
+                        <ChevronDown
+                          className={`nav-chevron ${isOpen ? 'rotate-chevron' : ''}`}
+                          size={16}
+                          strokeWidth={2.4}
+                          aria-hidden="true"
+                        />
+                      )}
+                    </a>
 
-        {/* Mobile Hamburger Toggle */}
-        <button
-          type="button"
-          className="mobile-toggle-btn"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          aria-expanded={mobileMenuOpen}
-          aria-label={mobileMenuOpen ? 'Close Navigation Menu' : 'Open Navigation Menu'}
-        >
-          {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
+                    {/* Dropdown Menu */}
+                    {item.hasDropdown && (
+                      <div
+                        className={`dropdown-menu ${isDepartment ? 'dropdown-department' : ''} ${
+                          isOpen ? 'is-visible' : ''
+                        }`}
+                        role="menu"
+                        aria-label={`${item.label} sub-menu`}
+                      >
+                        <ul className="dropdown-list">
+                          {item.submenus.map((sub) => (
+                            <li key={sub.id} role="none" className="dropdown-item">
+                              <a
+                                href={sub.href}
+                                role="menuitem"
+                                className="dropdown-link"
+                                onClick={() => setActiveDropdown(null)}
+                              >
+                                <span className="dropdown-link-text">{sub.label}</span>
+                                <ArrowRight className="dropdown-arrow-hover" size={16} aria-hidden="true" />
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                  </li>
+                );
+              })}
+            </ul>
+          </nav>
+
+          {/* Mobile Hamburger Toggle */}
+          <button
+            type="button"
+            className="mobile-toggle-btn"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-expanded={mobileMenuOpen}
+            aria-label={mobileMenuOpen ? 'Close Navigation Menu' : 'Open Navigation Menu'}
+          >
+            {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Drawer Navigation */}
@@ -179,7 +233,10 @@ export default function Header() {
           <div className="mobile-drawer-header">
             <div className="mobile-logo">
               <img src="/alvas-logo.png" alt="Alva's Logo" className="mobile-crest" />
-              <span className="mobile-logo-title">ALVA'S PHYSIOTHERAPY</span>
+              <div className="mobile-logo-text">
+                <span className="mobile-logo-title">ALVA'S</span>
+                <span className="mobile-logo-sub">PHYSIOTHERAPY</span>
+              </div>
             </div>
             <button
               type="button"
@@ -189,6 +246,18 @@ export default function Header() {
             >
               <X size={24} />
             </button>
+          </div>
+
+          {/* Mobile Info Strip */}
+          <div className="mobile-drawer-meta">
+            <div className="mobile-meta-pill">
+              <Building2 size={13} />
+              <span>Code: <strong>{institutionalInfo.collegeCode}</strong></span>
+            </div>
+            <div className="mobile-meta-pill">
+              <Phone size={13} />
+              <span>{institutionalInfo.phone}</span>
+            </div>
           </div>
 
           <ul className="mobile-nav-list">
@@ -243,8 +312,8 @@ export default function Header() {
           </ul>
 
           <div className="mobile-nav-footer">
-            <p className="mobile-college-meta">Affiliated to Rajiv Gandhi University of Health Sciences</p>
-            <p className="mobile-college-since">Since 1995 • Moodbidri, Karnataka</p>
+            <p className="mobile-college-meta">{institutionalInfo.affiliation}</p>
+            <p className="mobile-college-since">{institutionalInfo.recognition}</p>
           </div>
         </div>
       </div>
