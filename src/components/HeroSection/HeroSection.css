@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Hero Section Styling (Teal Modern Theme)
+   Hero Section Styling (White Nav & Teal Accents)
    ========================================================================== */
 
 .hero-section {
@@ -90,7 +90,7 @@
 .eyebrow-dash {
   width: 28px;
   height: 3.5px;
-  background-color: var(--color-orange); /* #FF7900 */
+  background-color: #48AAAD; /* Teal decorative line */
   border-radius: 2px;
 }
 
@@ -98,21 +98,21 @@
   font-size: 0.84rem;
   font-weight: 700;
   letter-spacing: 0.24em;
-  color: var(--color-deep-teal); /* #075B60 */
+  color: #082B50; /* Dark Navy */
   text-transform: uppercase;
 }
 
 .hero-heading {
   font-size: clamp(2.35rem, 3.7vw, 3.45rem);
   font-weight: 800;
-  color: var(--color-dark-teal); /* #073F46 */
+  color: #082B50; /* Dark Navy */
   line-height: 1.18;
   margin-bottom: 1.25rem;
   letter-spacing: -0.02em;
 }
 
 .hero-highlight {
-  color: var(--color-orange); /* #FF7900 */
+  color: #48AAAD; /* Teal highlight for Physiotherapy */
   display: inline;
 }
 
@@ -130,7 +130,7 @@
 .hero-since {
   font-size: 0.98rem;
   font-weight: 700;
-  color: var(--color-orange); /* #FF7900 */
+  color: var(--color-orange); /* Institutional founding year */
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -178,7 +178,7 @@
 
 .icon-orange {
   background-color: #FFF0E6;
-  color: var(--color-orange); /* #FF7900 */
+  color: var(--color-orange);
 }
 
 .icon-red {
@@ -200,7 +200,7 @@
 .feature-primary-text {
   font-size: 0.8rem;
   font-weight: 700;
-  color: var(--color-dark-teal); /* #073F46 */
+  color: #082B50; /* Dark Navy */
 }
 
 .feature-secondary-text {
@@ -249,7 +249,7 @@
   align-items: center;
   gap: 10px;
   background-color: var(--color-white);
-  color: var(--color-dark-teal); /* #073F46 */
+  color: #082B50; /* Dark Navy */
   padding: 0.88rem 1.65rem;
   font-size: 0.94rem;
   font-weight: 700;
@@ -259,14 +259,14 @@
 }
 
 .btn-secondary-teal:hover {
-  border-color: var(--color-orange);
-  color: var(--color-orange);
-  background-color: #FFF9F5;
+  border-color: #48AAAD;
+  color: #48AAAD;
+  background-color: #F4FBFB;
   transform: translateY(-2px);
 }
 
 .btn-arrow-orange {
-  color: var(--color-orange);
+  color: #48AAAD; /* Teal button arrow */
   transition: transform var(--transition-fast);
 }
 
@@ -367,7 +367,7 @@
 .script-orange-bar {
   width: 46px;
   height: 3px;
-  background-color: var(--color-orange); /* #FF7900 underline */
+  background-color: #48AAAD; /* Teal decorative line */
   border-radius: 2px;
   margin-top: 6px;
 }

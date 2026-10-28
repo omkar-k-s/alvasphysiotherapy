@@ -110,7 +110,7 @@
   left: 0;
   width: 28px;
   height: 2.5px;
-  background-color: var(--color-orange);
+  background-color: #48AAAD; /* Teal */
 }
 
 .footer-links-list {

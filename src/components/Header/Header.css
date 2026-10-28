@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Two-Tier Header Styling (Teal Modern Institutional Design)
+   Two-Tier Header Styling (White Nav Bar + Teal Typography Accents)
    ========================================================================== */
 
 .site-header {
@@ -8,12 +8,12 @@
   left: 0;
   width: 100%;
   z-index: 1000;
-  box-shadow: 0 4px 24px rgba(7, 63, 70, 0.25);
+  box-shadow: 0 4px 20px rgba(8, 43, 80, 0.08);
   transition: all var(--transition-normal);
 }
 
 /* --------------------------------------------------------------------------
-   Tier 1: Institutional Information Bar
+   Tier 1: Institutional Information Bar (Deep Teal #075B60)
    -------------------------------------------------------------------------- */
 .top-info-bar {
   background-color: var(--color-deep-teal); /* #075B60 */
@@ -76,12 +76,13 @@
 }
 
 /* --------------------------------------------------------------------------
-   Tier 2: Main Navigation Bar
+   Tier 2: Main Navigation Bar (Pure White #FFFFFF)
    -------------------------------------------------------------------------- */
 .main-nav-bar {
-  background: linear-gradient(90deg, #168F95 0%, #127E84 100%);
-  color: var(--color-white);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  background-color: #FFFFFF; /* Pure White background */
+  color: #082B50; /* Dark Navy text */
+  border-bottom: 1px solid #E2EBF2;
+  box-shadow: 0 4px 16px rgba(8, 43, 80, 0.04);
 }
 
 .header-container {
@@ -119,11 +120,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.12);
+  background: transparent; /* Clean transparent/white background */
   border-radius: var(--radius-sm);
-  padding: 3px;
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 2px;
+  border: none;
+  box-shadow: none;
   flex-shrink: 0;
 }
 
@@ -145,7 +146,7 @@
   font-size: 1.85rem;
   font-weight: 800;
   letter-spacing: 0.08em;
-  color: var(--color-white);
+  color: #082B50; /* Dark Navy */
   line-height: 1;
 }
 
@@ -153,7 +154,7 @@
   font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.22em;
-  color: var(--color-gold); /* Gold matching reference logo subtitle */
+  color: #48AAAD; /* Teal #48AAAD */
   text-transform: uppercase;
   margin-top: 5px;
   line-height: 1;
@@ -188,7 +189,7 @@
   align-items: center;
   gap: 5px;
   padding: 0.7rem 0.85rem;
-  color: #FFFFFF;
+  color: #082B50; /* Dark Navy labels */
   font-size: 16px; /* 16–18px semibold/bold */
   font-weight: 650;
   letter-spacing: 0.04em;
@@ -200,19 +201,19 @@
 }
 
 .nav-link:hover {
-  color: var(--color-white);
-  background: rgba(255, 255, 255, 0.12);
+  color: #48AAAD; /* Teal hover */
+  background: rgba(72, 170, 173, 0.08);
 }
 
 .nav-item.menu-open .nav-link {
-  color: var(--color-gold);
-  background: var(--color-deep-teal); /* Connects seamlessly with dropdown */
+  color: #48AAAD;
+  background: rgba(72, 170, 173, 0.12);
   border-radius: var(--radius-sm) var(--radius-sm) 0 0;
 }
 
-/* Active Tab Indicator (HOME) */
+/* Active Tab Indicator (HOME in Teal #48AAAD) */
 .nav-item.is-active .nav-link {
-  color: var(--color-gold);
+  color: #48AAAD; /* Highlight active HOME tab in Teal */
   font-weight: 700;
 }
 
@@ -223,14 +224,14 @@
   left: 14px;
   right: 14px;
   height: 3.5px;
-  background: linear-gradient(90deg, #FFC928 0%, #FF7900 100%);
+  background: #48AAAD; /* Teal underline */
   border-radius: 3px;
-  box-shadow: 0 0 10px rgba(255, 201, 40, 0.65);
+  box-shadow: 0 0 8px rgba(72, 170, 173, 0.45);
 }
 
 .nav-chevron {
   transition: transform var(--transition-normal), color var(--transition-fast);
-  color: #FFFFFF;
+  color: #082B50; /* Dark Navy dropdown arrows */
   flex-shrink: 0;
   margin-left: 2px;
   display: inline-block;
@@ -239,7 +240,7 @@
 
 .nav-item:hover .nav-chevron,
 .nav-item.menu-open .nav-chevron {
-  color: var(--color-gold);
+  color: #48AAAD;
 }
 
 .rotate-chevron {
@@ -247,7 +248,7 @@
 }
 
 /* --------------------------------------------------------------------------
-   Dropdown Menus (Deep Teal Theme)
+   Dropdown Menus (Deep Teal Theme with Teal Accent)
    -------------------------------------------------------------------------- */
 .dropdown-menu {
   position: absolute;
@@ -255,9 +256,9 @@
   left: 0;
   min-width: 280px;
   background-color: var(--color-deep-teal); /* #075B60 */
-  border-top: 3px solid var(--color-gold);
+  border-top: 3px solid #48AAAD; /* Teal top accent */
   border-radius: 0 0 var(--radius-md) var(--radius-md);
-  box-shadow: 0 18px 40px rgba(7, 63, 70, 0.45), 0 6px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 18px 40px rgba(7, 63, 70, 0.35), 0 6px 12px rgba(0, 0, 0, 0.15);
   opacity: 0;
   visibility: hidden;
   transform: translateY(8px);
@@ -327,7 +328,7 @@
   opacity: 0;
   transform: translateX(-6px);
   transition: all var(--transition-fast);
-  color: var(--color-gold);
+  color: #48AAAD;
   flex-shrink: 0;
   margin-left: 12px;
 }
@@ -336,7 +337,7 @@
 .dropdown-link:focus {
   background-color: var(--color-header-teal); /* #168F95 */
   color: var(--color-white);
-  border-left-color: var(--color-gold);
+  border-left-color: #48AAAD;
   padding-left: 1.65rem;
 }
 
@@ -351,15 +352,15 @@
    -------------------------------------------------------------------------- */
 .mobile-toggle-btn {
   display: none;
-  color: var(--color-white);
+  color: #082B50; /* Dark Navy icon on white header */
   padding: 10px;
   border-radius: var(--radius-sm);
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(8, 43, 80, 0.06);
   transition: background-color var(--transition-fast);
 }
 
 .mobile-toggle-btn:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(8, 43, 80, 0.12);
 }
 
 .mobile-nav-drawer {
@@ -425,7 +426,7 @@
 .mobile-logo-sub {
   font-size: 0.65rem;
   font-weight: 700;
-  color: var(--color-gold);
+  color: #48AAAD;
   letter-spacing: 0.18em;
   margin-top: 2px;
 }
@@ -499,7 +500,7 @@
 }
 
 .active-mobile-link {
-  color: var(--color-gold) !important;
+  color: #48AAAD !important;
   font-weight: 700;
 }
 
@@ -530,8 +531,8 @@
 }
 
 .mobile-submenu-link:hover {
-  color: var(--color-gold);
-  border-left-color: var(--color-gold);
+  color: #48AAAD;
+  border-left-color: #48AAAD;
 }
 
 .mobile-nav-footer {
