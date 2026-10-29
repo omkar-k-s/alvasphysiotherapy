@@ -1,0 +1,52 @@
+:root {
+  /* Brand Theme Colors */
+  --color-primary: #48AAAD;
+  --color-deep-teal: #075B60;
+  --color-header-teal: #168F95;
+  --color-navy: #082B50;
+  --color-light-aqua: #EAF8F8;
+  --color-background: #F7FCFC;
+  --color-white: #FFFFFF;
+  --color-orange: #FF7900;
+  --color-border: #DCEBEC;
+
+  /* Accent & Neutral Colors */
+  --color-gold: #FFC928;
+  --color-body: #4A6375;
+  --color-border-subtle: #E8F3F3;
+
+  /* Semantic Aliases for Design Consistency */
+  --color-primary-teal: var(--color-primary);
+  --color-dark-navy: var(--color-navy);
+  --color-dark-teal: var(--color-navy);
+  --color-page-bg: var(--color-background);
+
+  /* Legacy Mappings for Component Compatibility */
+  --color-navy-dark: var(--color-deep-teal);
+  --color-navy-primary: #073F46;
+  --color-navy-light: var(--color-header-teal);
+  --color-navy-hover: #05484C;
+  --color-bg-light: var(--color-background);
+  --color-bg-subtle: var(--color-light-aqua);
+  --color-text-dark: #073F46;
+
+  /* Shadows & Elevation */
+  --shadow-sm: 0 1px 3px rgba(7, 91, 96, 0.06), 0 1px 2px rgba(7, 91, 96, 0.04);
+  --shadow-md: 0 4px 6px -1px rgba(7, 91, 96, 0.08), 0 2px 4px -1px rgba(7, 91, 96, 0.04);
+  --shadow-lg: 0 10px 25px -3px rgba(7, 91, 96, 0.1), 0 4px 6px -2px rgba(7, 91, 96, 0.05);
+  --shadow-xl: 0 20px 35px -5px rgba(7, 91, 96, 0.14), 0 10px 10px -5px rgba(7, 91, 96, 0.04);
+  --shadow-dropdown: 0 16px 36px rgba(7, 63, 70, 0.35), 0 6px 12px rgba(0, 0, 0, 0.15);
+
+  /* Border Radii */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-pill: 9999px;
+
+  /* Animation Transitions */
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+  --transition-smooth: 350ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+

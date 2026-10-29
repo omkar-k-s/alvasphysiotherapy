@@ -1,0 +1,682 @@
+/* ==========================================================================
+   Two-Tier Header Styling (White Nav Bar + Teal Typography Accents)
+   ========================================================================== */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(8, 43, 80, 0.08);
+  transition: all var(--transition-normal);
+}
+
+/* --------------------------------------------------------------------------
+   Tier 1: Institutional Information Bar (Deep Teal #075B60)
+   -------------------------------------------------------------------------- */
+.top-info-bar {
+  background-color: var(--color-deep-teal); /* #075B60 */
+  color: var(--color-white);
+  height: 42px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: clamp(0.74rem, 0.82vw, 0.82rem);
+  letter-spacing: 0.015em;
+  display: flex;
+  align-items: center;
+}
+
+.info-bar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-left: clamp(1rem, 2vw, 2rem);
+  padding-right: clamp(1rem, 2vw, 2rem);
+}
+
+@media (min-width: 1536px) {
+  .info-bar-container {
+    max-width: 1480px;
+  }
+}
+
+.info-bar-left,
+.info-bar-right {
+  display: flex;
+  align-items: center;
+  gap: clamp(8px, 0.9vw, 14px);
+  flex-shrink: 0;
+}
+
+.info-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  color: #F0FBFB;
+}
+
+.info-icon {
+  color: #B2E5E7;
+  flex-shrink: 0;
+}
+
+.info-code-gold {
+  color: var(--color-gold); /* #FFC928 */
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.info-divider {
+  color: rgba(255, 255, 255, 0.3);
+  font-weight: 300;
+  font-size: 0.85rem;
+}
+
+.info-link {
+  color: #F0FBFB;
+  transition: color var(--transition-fast);
+}
+
+.info-link:hover {
+  color: var(--color-gold);
+}
+
+/* --------------------------------------------------------------------------
+   Tier 2: Main Navigation Bar (Pure White #FFFFFF)
+   -------------------------------------------------------------------------- */
+.main-nav-bar {
+  background-color: #FFFFFF; /* Pure White background */
+  color: #082B50; /* Dark Navy text */
+  border-bottom: 1px solid #E2EBF2;
+  box-shadow: 0 4px 16px rgba(8, 43, 80, 0.04);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: clamp(80px, 6vw, 90px);
+  position: relative;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-left: clamp(1rem, 2vw, 2rem);
+  padding-right: clamp(1rem, 2vw, 2rem);
+}
+
+@media (min-width: 1536px) {
+  .header-container {
+    max-width: 1480px;
+  }
+}
+
+/* Brand / Logo */
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: clamp(8px, 0.9vw, 12px);
+  text-decoration: none;
+  flex-shrink: 0;
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+
+.header-logo:hover {
+  opacity: 0.96;
+  transform: translateY(-1px);
+}
+
+.logo-emblem-box {
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+  flex-shrink: 0;
+}
+
+.logo-crest {
+  height: clamp(52px, 4.2vw, 64px);
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.logo-text-group {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.logo-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.35rem, 1.45vw, 1.65rem);
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: #082B50; /* Dark Navy */
+  line-height: 1;
+}
+
+.logo-subtitle {
+  font-size: clamp(0.65rem, 0.72vw, 0.75rem);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: #48AAAD; /* Teal #48AAAD */
+  text-transform: uppercase;
+  margin-top: 3px;
+  line-height: 1;
+}
+
+/* Desktop Main Navigation */
+.desktop-navigation {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  flex-shrink: 0;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: clamp(0.04rem, 0.22vw, 0.28rem);
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 0.45rem clamp(0.28rem, 0.45vw, 0.65rem);
+  color: #082B50; /* Dark Navy labels */
+  font-size: clamp(12px, 0.8vw, 14px);
+  font-weight: 650;
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+  border-radius: var(--radius-sm);
+  transition: color var(--transition-fast), background-color var(--transition-fast);
+  position: relative;
+  white-space: nowrap;
+}
+
+.nav-link:hover {
+  color: #082B50;
+  background-color: #EAF8F8; /* Pale teal background on hover */
+}
+
+.nav-item.is-active .nav-link {
+  color: #48AAAD; /* Highlight active HOME tab in Teal */
+  font-weight: 700;
+}
+
+.nav-item.is-active .nav-link:hover {
+  color: #48AAAD;
+  background-color: #EAF8F8;
+}
+
+.nav-item.menu-open .nav-link {
+  color: #082B50;
+  background-color: #EAF8F8; /* Pale teal background for expanded tab */
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+}
+
+.nav-item.menu-open.is-active .nav-link {
+  color: #48AAAD;
+  background-color: #EAF8F8;
+}
+
+/* Active Tab Indicator (HOME in Teal #48AAAD) */
+.nav-item.is-active .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  right: 8px;
+  height: 3px;
+  background: #48AAAD; /* Teal underline */
+  border-radius: 3px;
+  box-shadow: 0 0 8px rgba(72, 170, 173, 0.45);
+}
+
+.nav-chevron {
+  transition: transform var(--transition-normal);
+  color: #082B50; /* Keep dropdown arrows dark navy */
+  flex-shrink: 0;
+  margin-left: 2px;
+  display: inline-block;
+  vertical-align: middle;
+  width: 14px;
+  height: 14px;
+}
+
+.nav-item:hover .nav-chevron,
+.nav-item.menu-open .nav-chevron {
+  color: #082B50;
+}
+
+.rotate-chevron {
+  transform: rotate(180deg);
+}
+
+/* --------------------------------------------------------------------------
+   Dropdown Menus (Deep Teal Theme with Teal Accent)
+   -------------------------------------------------------------------------- */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 260px;
+  background-color: #075B60; /* Deep teal #075B60 */
+  border-top: 2.5px solid #48AAAD; /* Subtle teal top border #48AAAD */
+  border-radius: 0 0 10px 10px; /* Rounded bottom corners */
+  box-shadow: 0 18px 40px rgba(7, 63, 70, 0.35), 0 6px 12px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: opacity 200ms ease, transform 200ms ease, visibility 200ms;
+  z-index: 1050;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.dropdown-menu.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Wide Department Dropdown with clean text wrapping */
+.dropdown-menu.dropdown-department {
+  min-width: min(400px, 85vw);
+  max-width: min(480px, 88vw);
+}
+
+/* Right-align dropdowns near edge to prevent viewport overflow */
+.nav-item:nth-last-child(-n+4) .dropdown-menu {
+  left: auto;
+  right: 0;
+}
+
+.dropdown-list {
+  list-style: none;
+  padding: 0.35rem 0;
+  margin: 0;
+}
+
+.dropdown-item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12); /* Fine separators */
+}
+
+.dropdown-item:last-child {
+  border-bottom: none;
+}
+
+.dropdown-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8rem 1.25rem;
+  color: #FFFFFF; /* Pure white text */
+  font-size: 14.5px;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+  line-height: 1.4;
+  transition: all var(--transition-fast);
+  border-left: 3px solid transparent;
+}
+
+.dropdown-link-text {
+  flex: 1;
+  white-space: normal;
+  word-break: normal;
+  overflow-wrap: break-word; /* Ensure long submenu labels wrap properly */
+}
+
+.dropdown-arrow-hover {
+  opacity: 0;
+  transform: translateX(-6px);
+  transition: all var(--transition-fast);
+  color: #48AAAD;
+  flex-shrink: 0;
+  margin-left: 10px;
+}
+
+.dropdown-link:hover,
+.dropdown-link:focus {
+  background-color: #116F73; /* Slightly lighter teal hover background #116F73 */
+  color: #FFFFFF;
+  border-left-color: #48AAAD;
+  padding-left: 1.45rem;
+}
+
+.dropdown-link:hover .dropdown-arrow-hover,
+.dropdown-link:focus .dropdown-arrow-hover {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* --------------------------------------------------------------------------
+   Mobile Navigation & Drawer
+   -------------------------------------------------------------------------- */
+.mobile-toggle-btn {
+  display: none;
+  color: #082B50; /* Dark Navy icon on white header */
+  padding: 8px;
+  border-radius: var(--radius-sm);
+  background: rgba(8, 43, 80, 0.06);
+  transition: background-color var(--transition-fast);
+}
+
+.mobile-toggle-btn:hover {
+  background: rgba(8, 43, 80, 0.12);
+}
+
+.mobile-nav-drawer {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  max-width: 380px;
+  height: 100vh;
+  background-color: var(--color-deep-teal);
+  z-index: 2000;
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+  transition: right 300ms cubic-bezier(0.16, 1, 0.3, 1);
+  overflow-y: auto;
+}
+
+.mobile-nav-drawer.is-open {
+  right: 0;
+}
+
+.mobile-nav-inner {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.mobile-drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  margin-bottom: 0.75rem;
+}
+
+.mobile-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mobile-crest {
+  height: 38px;
+  width: auto;
+  object-fit: contain;
+}
+
+.mobile-logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.mobile-logo-title {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--color-white);
+  letter-spacing: 0.06em;
+}
+
+.mobile-logo-sub {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #48AAAD;
+  letter-spacing: 0.18em;
+  margin-top: 2px;
+}
+
+.mobile-close-btn {
+  color: #B2E5E7;
+  padding: 6px;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+}
+
+.mobile-close-btn:hover {
+  color: var(--color-white);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.mobile-drawer-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.mobile-meta-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.08);
+  font-size: 0.75rem;
+  color: #E0F5F6;
+}
+
+.mobile-meta-pill strong {
+  color: var(--color-gold);
+}
+
+.mobile-nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+}
+
+.mobile-nav-item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.mobile-nav-link,
+.mobile-nav-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.9rem 0.6rem;
+  color: #F0FBFB;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-align: left;
+  transition: color var(--transition-fast);
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-btn:hover {
+  color: var(--color-white);
+}
+
+.active-mobile-link {
+  color: #48AAAD !important;
+  font-weight: 700;
+}
+
+.mobile-submenu-list {
+  list-style: none;
+  padding: 0.4rem 0 0.8rem 1rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: var(--radius-sm);
+  margin-bottom: 0.5rem;
+}
+
+.mobile-submenu-item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.mobile-submenu-item:last-child {
+  border-bottom: none;
+}
+
+.mobile-submenu-link {
+  display: block;
+  padding: 0.65rem 0.85rem;
+  font-size: 14px;
+  color: #B2E5E7;
+  line-height: 1.45;
+  border-left: 2px solid transparent;
+  transition: all var(--transition-fast);
+}
+
+.mobile-submenu-link:hover {
+  color: #48AAAD;
+  border-left-color: #48AAAD;
+}
+
+.mobile-nav-footer {
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: 0.8rem;
+  color: #B2E5E7;
+  line-height: 1.5;
+}
+
+.mobile-college-meta {
+  color: #FFFFFF;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.mobile-college-since {
+  color: var(--color-gold);
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Breakpoints
+   -------------------------------------------------------------------------- */
+@media (max-width: 1280px) {
+  .info-item-recognition,
+  .info-divider-recognition {
+    display: none;
+  }
+}
+
+@media (max-width: 1200px) {
+  .top-info-bar {
+    font-size: 0.74rem;
+  }
+  .info-bar-left,
+  .info-bar-right {
+    gap: 8px;
+  }
+}
+
+/* Below 1120px: Switch to mobile hamburger navigation to preserve clean layout */
+@media (max-width: 1120px) {
+  .top-info-bar {
+    height: auto;
+    padding: 6px 0;
+  }
+
+  .info-bar-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .info-bar-left,
+  .info-bar-right {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .desktop-navigation {
+    display: none;
+  }
+
+  .mobile-toggle-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .header-container {
+    height: 76px;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .header-logo {
+    gap: 10px;
+  }
+
+  .logo-crest {
+    height: 52px;
+  }
+
+  .logo-title {
+    font-size: 1.35rem;
+  }
+
+  .logo-subtitle {
+    font-size: 0.68rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .info-bar-right {
+    display: none; /* Keep mobile top bar clean and concise */
+  }
+
+  .header-container {
+    height: 70px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .logo-crest {
+    height: 48px;
+  }
+
+  .logo-title {
+    font-size: 1.25rem;
+  }
+
+  .logo-subtitle {
+    font-size: 0.62rem;
+    letter-spacing: 0.16em;
+  }
+}

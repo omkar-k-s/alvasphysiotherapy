@@ -1,0 +1,679 @@
+/* ==========================================================================
+   Hero Section Styling (White Nav & Teal Accents)
+   ========================================================================== */
+
+.hero-section {
+  position: relative;
+  background: radial-gradient(circle at 100% 0%, rgba(189, 237, 239, 0.45) 0%, rgba(247, 252, 252, 0.6) 35%, transparent 60%),
+              radial-gradient(circle at 0% 100%, rgba(189, 237, 239, 0.35) 0%, rgba(234, 248, 248, 0.5) 30%, transparent 55%),
+              linear-gradient(135deg, #FFFFFF 0%, #F7FCFC 50%, #EAF8F8 100%);
+  padding: clamp(2.25rem, 3.5vw, 3.75rem) 0 clamp(2.5rem, 4vw, 4.25rem);
+  overflow: hidden;
+}
+
+.hero-decorations {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* --------------------------------------------------------------------------
+   Physiotherapy-Themed Decorative Elements
+   -------------------------------------------------------------------------- */
+
+/* Human Spine Illustration along far-left edge */
+.hero-spine-illustration {
+  position: absolute;
+  top: clamp(0px, 1.2vw, 15px);
+  left: clamp(-16px, -1.2vw, -6px);
+  height: clamp(340px, 88%, 520px);
+  width: auto;
+  max-width: clamp(80px, 7vw, 115px);
+  opacity: 0.22;
+  pointer-events: none;
+  z-index: 1;
+  user-select: none;
+}
+
+/* Top-Left Dotted Grid beside upper cervical spine */
+.hero-dots-top-left {
+  position: absolute;
+  top: clamp(24px, 3.2vw, 42px);
+  left: clamp(75px, 8vw, 130px);
+  width: clamp(48px, 4.5vw, 62px);
+  height: clamp(48px, 4.5vw, 62px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Center-Top Subtle Dotted Pattern Behind Heading */
+.hero-dots-center,
+.hero-dots-center-top {
+  position: absolute;
+  top: clamp(45px, 6vw, 90px);
+  left: clamp(38%, 42vw, 47%);
+  width: clamp(70px, 6.5vw, 95px);
+  height: auto;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Center-Lower Subtle Dotted Pattern Above Features */
+.hero-dots-center-lower {
+  position: absolute;
+  top: clamp(140px, 16vw, 210px);
+  left: clamp(33%, 36vw, 40%);
+  width: clamp(70px, 6.5vw, 95px);
+  height: auto;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Flowing Teal Waves Top Right Corner */
+.hero-waves-top-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: clamp(320px, 38vw, 560px);
+  height: clamp(160px, 20vw, 290px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Flowing Teal Waves Bottom Left Corner */
+.hero-waves-bottom-left {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: clamp(220px, 25vw, 380px);
+  height: clamp(130px, 15vw, 230px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Small Pale-Teal Medical Cross above Rehabilitation Figure */
+.hero-medical-cross {
+  position: absolute;
+  top: clamp(110px, 13vw, 160px);
+  right: clamp(42px, 5.5vw, 75px);
+  width: clamp(26px, 2.4vw, 34px);
+  height: clamp(26px, 2.4vw, 34px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Rehabilitation Walking Figure along far-right edge */
+.hero-rehab-figure {
+  position: absolute;
+  bottom: 0;
+  right: clamp(-10px, -0.6vw, 0px);
+  height: clamp(220px, 22vw, 310px);
+  width: auto;
+  max-width: clamp(120px, 12vw, 160px);
+  opacity: 0.25;
+  pointer-events: none;
+  z-index: 1;
+  user-select: none;
+}
+
+/* Bottom-Right Dotted Grid below collage */
+.hero-dots-bottom-right {
+  position: absolute;
+  bottom: clamp(10px, 1.4vw, 18px);
+  right: clamp(60px, 7.5vw, 110px);
+  width: clamp(65px, 6vw, 84px);
+  height: clamp(36px, 3.5vw, 48px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-container {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+  align-items: center;
+  gap: clamp(1.5rem, 3vw, 3.25rem);
+  position: relative;
+  z-index: 3;
+}
+
+/* --------------------------------------------------------------------------
+   Left Column
+   -------------------------------------------------------------------------- */
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: clamp(0.75rem, 1vw, 1.1rem);
+}
+
+.eyebrow-dash {
+  width: 28px;
+  height: 3.5px;
+  background-color: #48AAAD; /* Teal decorative line */
+  border-radius: 2px;
+}
+
+.eyebrow-text {
+  font-size: clamp(0.76rem, 0.85vw, 0.84rem);
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: #082B50; /* Dark Navy */
+  text-transform: uppercase;
+}
+
+.hero-heading {
+  font-size: clamp(2rem, 2.75vw, 3.25rem);
+  font-weight: 800;
+  color: #082B50; /* Dark Navy */
+  line-height: 1.16;
+  margin-bottom: clamp(0.85rem, 1.1vw, 1.25rem);
+  letter-spacing: -0.02em;
+  word-break: break-word;
+}
+
+.hero-highlight {
+  color: #48AAAD; /* Teal highlight for Physiotherapy */
+  display: inline;
+}
+
+.hero-meta-group {
+  margin-bottom: clamp(1.2rem, 1.8vw, 1.85rem);
+}
+
+.hero-affiliate {
+  font-size: clamp(0.92rem, 0.98vw, 1.05rem);
+  color: var(--color-body); /* #4A6375 */
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.hero-since {
+  font-size: clamp(0.88rem, 0.92vw, 0.98rem);
+  font-weight: 700;
+  color: var(--color-orange); /* Institutional founding year */
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* 4 Feature Highlights Grid */
+.hero-features-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(0.35rem, 0.75vw, 1rem);
+  margin-bottom: clamp(1.35rem, 1.9vw, 2rem);
+  padding: clamp(0.85rem, 1.2vw, 1.15rem) 0;
+  border-top: 1px solid rgba(220, 235, 236, 0.9);
+  border-bottom: 1px solid rgba(220, 235, 236, 0.9);
+}
+
+.hero-feature-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.45rem;
+  min-width: 0;
+}
+
+.feature-icon-wrapper {
+  width: clamp(40px, 3.4vw, 48px);
+  height: clamp(40px, 3.4vw, 48px);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition-fast);
+  box-shadow: 0 2px 8px rgba(7, 91, 96, 0.05);
+  flex-shrink: 0;
+}
+
+.feature-icon-wrapper svg {
+  width: clamp(18px, 1.6vw, 22px);
+  height: clamp(18px, 1.6vw, 22px);
+}
+
+.hero-feature-item:hover .feature-icon-wrapper {
+  transform: translateY(-3px) scale(1.06);
+}
+
+/* Exact Pastel Circular Backgrounds */
+.icon-blue {
+  background-color: #E6F4FA;
+  color: #0284C7;
+}
+
+.icon-orange {
+  background-color: #FFF0E6;
+  color: var(--color-orange);
+}
+
+.icon-red {
+  background-color: #FDE8E8;
+  color: #EF4444;
+}
+
+.icon-green {
+  background-color: #E6F8ED;
+  color: #10B981;
+}
+
+.feature-text-block {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.feature-primary-text {
+  font-size: clamp(0.72rem, 0.78vw, 0.8rem);
+  font-weight: 700;
+  color: #082B50; /* Dark Navy */
+  line-height: 1.25;
+}
+
+.feature-secondary-text {
+  font-size: clamp(0.66rem, 0.72vw, 0.74rem);
+  font-weight: 500;
+  color: #64748B;
+  line-height: 1.25;
+}
+
+/* CTA Buttons */
+.hero-cta-group {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.85rem, 1.2vw, 1.25rem);
+}
+
+.btn-primary-teal {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  background-color: var(--color-deep-teal); /* #075B60 */
+  color: var(--color-white);
+  padding: clamp(0.75rem, 0.85vw, 0.88rem) clamp(1.35rem, 1.5vw, 1.85rem);
+  font-size: clamp(0.86rem, 0.92vw, 0.94rem);
+  font-weight: 700;
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 14px rgba(7, 91, 96, 0.28);
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.btn-primary-teal:hover {
+  background-color: #05484C;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(7, 91, 96, 0.38);
+}
+
+.btn-arrow {
+  transition: transform var(--transition-fast);
+}
+
+.btn-primary-teal:hover .btn-arrow {
+  transform: translateX(4px);
+}
+
+.btn-secondary-teal {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  background-color: var(--color-white);
+  color: #082B50; /* Dark Navy */
+  padding: clamp(0.75rem, 0.85vw, 0.88rem) clamp(1.25rem, 1.4vw, 1.65rem);
+  font-size: clamp(0.86rem, 0.92vw, 0.94rem);
+  font-weight: 700;
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--color-border); /* #DCEBEC */
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.btn-secondary-teal:hover {
+  border-color: #48AAAD;
+  color: #48AAAD;
+  background-color: #F4FBFB;
+  transform: translateY(-2px);
+}
+
+.btn-arrow-orange {
+  color: #48AAAD; /* Teal button arrow */
+  transition: transform var(--transition-fast);
+}
+
+.btn-secondary-teal:hover .btn-arrow-orange {
+  transform: translateX(4px);
+}
+
+/* --------------------------------------------------------------------------
+   Right Visual Image Collage
+   -------------------------------------------------------------------------- */
+.hero-right {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  min-width: 0;
+}
+
+.hero-collage-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  height: clamp(370px, 32vw, 470px);
+}
+
+/* Main Campus Building */
+.main-campus-card {
+  width: 76%;
+  height: 92%;
+  border-radius: clamp(18px, 1.8vw, 26px);
+  overflow: hidden;
+  box-shadow: 0 16px 36px rgba(7, 91, 96, 0.16);
+  border: 4px solid var(--color-white);
+  position: absolute;
+  top: 4%;
+  left: 0;
+}
+
+.campus-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 500ms ease;
+}
+
+.main-campus-card:hover .campus-img {
+  transform: scale(1.03);
+}
+
+/* Top Right Floating Treatment Card with Split Script */
+.floating-card-top {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 58%;
+  height: clamp(165px, 13.5vw, 205px);
+  border-radius: clamp(16px, 1.6vw, 22px);
+  overflow: hidden;
+  box-shadow: 0 16px 36px rgba(7, 91, 96, 0.22);
+  border: 4px solid var(--color-white);
+  background: var(--color-white);
+  z-index: 3;
+}
+
+.card-top-inner {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.treatment-script-panel {
+  width: 45%;
+  height: 100%;
+  background-color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(0.5rem, 0.75vw, 0.85rem);
+  position: relative;
+  z-index: 2;
+}
+
+.script-container {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.script-line-1,
+.script-line-2 {
+  font-family: var(--font-script);
+  font-size: clamp(1.05rem, 1.15vw, 1.25rem);
+  font-weight: 700;
+  color: var(--color-deep-teal); /* #075B60 */
+  letter-spacing: -0.01em;
+}
+
+.script-line-2 {
+  color: var(--color-header-teal); /* #168F95 */
+}
+
+.script-orange-bar {
+  width: clamp(32px, 3vw, 42px);
+  height: 3px;
+  background-color: #48AAAD; /* Teal decorative line */
+  border-radius: 2px;
+  margin-top: 5px;
+}
+
+.treatment-photo-panel {
+  width: 55%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.treatment-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 500ms ease;
+}
+
+.floating-card-top:hover .treatment-img {
+  transform: scale(1.06);
+}
+
+/* Bottom Right Floating Rehab Card */
+.floating-card-bottom {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 56%;
+  height: clamp(165px, 13.5vw, 205px);
+  border-radius: clamp(16px, 1.6vw, 22px);
+  overflow: hidden;
+  box-shadow: 0 16px 36px rgba(7, 91, 96, 0.22);
+  border: 4px solid var(--color-white);
+  background: var(--color-white);
+  z-index: 4;
+}
+
+.rehab-lab-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 500ms ease;
+}
+
+.floating-card-bottom:hover .rehab-lab-img {
+  transform: scale(1.06);
+}
+
+/* Circular Excellence Badge in Deep Teal & Gold */
+.excellence-badge {
+  position: absolute;
+  bottom: clamp(8px, 0.9vw, 12px);
+  right: clamp(8px, 0.9vw, 12px);
+  background-color: var(--color-deep-teal); /* #075B60 */
+  color: var(--color-white);
+  padding: clamp(5px, 0.6vw, 7px) clamp(8px, 0.8vw, 12px);
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  gap: clamp(6px, 0.7vw, 9px);
+  border: 2px solid var(--color-gold); /* #FFC928 */
+  box-shadow: 0 6px 16px rgba(7, 91, 96, 0.4);
+  z-index: 5;
+}
+
+.badge-icon-circle {
+  width: clamp(26px, 2.2vw, 30px);
+  height: clamp(26px, 2.2vw, 30px);
+  border-radius: 50%;
+  background: rgba(255, 201, 40, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.badge-award-icon {
+  color: var(--color-gold);
+  width: clamp(14px, 1.3vw, 18px);
+  height: clamp(14px, 1.3vw, 18px);
+}
+
+.badge-text-content {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+  text-align: left;
+}
+
+.badge-title {
+  font-size: clamp(0.52rem, 0.56vw, 0.58rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #B2E5E7;
+}
+
+.badge-sub {
+  font-size: clamp(0.55rem, 0.6vw, 0.62rem);
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  color: var(--color-white);
+}
+
+.badge-year {
+  font-size: clamp(0.55rem, 0.6vw, 0.62rem);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--color-gold);
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Breakpoints
+   -------------------------------------------------------------------------- */
+@media (max-width: 1080px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 2.75rem;
+  }
+  .hero-left {
+    text-align: center;
+    align-items: center;
+  }
+  .hero-eyebrow {
+    justify-content: center;
+  }
+  .hero-cta-group {
+    justify-content: center;
+  }
+  .hero-collage-wrapper {
+    max-width: 500px;
+    height: 380px;
+    margin: 0 auto;
+  }
+  .floating-card-top,
+  .floating-card-bottom {
+    height: 180px;
+  }
+  .hero-spine-illustration {
+    opacity: 0.16;
+    max-width: 80px;
+  }
+  .hero-rehab-figure {
+    opacity: 0.18;
+    max-width: 110px;
+  }
+  .hero-dots-center,
+  .hero-dots-center-top,
+  .hero-dots-center-lower {
+    display: none;
+  }
+  .hero-waves-top-right {
+    width: 320px;
+    height: 160px;
+    opacity: 0.85;
+  }
+  .hero-waves-bottom-left {
+    width: 220px;
+    height: 120px;
+    opacity: 0.85;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-spine-illustration {
+    opacity: 0.12;
+    max-width: 60px;
+  }
+  .hero-rehab-figure {
+    opacity: 0.14;
+    max-width: 90px;
+  }
+  .hero-medical-cross {
+    opacity: 0.35;
+    right: 20px;
+    top: 60px;
+  }
+  .hero-dots-top-left {
+    left: 45px;
+    top: 15px;
+    transform: scale(0.8);
+  }
+  .hero-dots-bottom-right {
+    right: 30px;
+    transform: scale(0.8);
+  }
+  .hero-features-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem 0.75rem;
+  }
+  .hero-feature-item {
+    text-align: center;
+  }
+  .feature-primary-text,
+  .feature-secondary-text {
+    white-space: normal;
+  }
+  .hero-collage-wrapper {
+    height: 320px;
+    max-width: 360px;
+  }
+  .main-campus-card {
+    width: 82%;
+    height: 90%;
+  }
+  .floating-card-top {
+    width: 68%;
+    height: 145px;
+  }
+  .floating-card-bottom {
+    width: 65%;
+    height: 145px;
+  }
+  .script-line-1,
+  .script-line-2 {
+    font-size: 0.9rem;
+  }
+  .hero-cta-group {
+    flex-direction: column;
+    width: 100%;
+  }
+  .btn-primary-teal,
+  .btn-secondary-teal {
+    width: 100%;
+    justify-content: center;
+  }
+}

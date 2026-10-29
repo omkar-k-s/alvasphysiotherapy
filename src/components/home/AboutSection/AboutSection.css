@@ -1,0 +1,521 @@
+/* ==========================================================================
+   About Our College Section
+   Responsive, Zoom-resilient styling matching reference design specification
+   ========================================================================== */
+
+.about-section {
+  position: relative;
+  padding: clamp(4.5rem, 6vw, 6.5rem) 0;
+  background: radial-gradient(circle at 100% 0%, rgba(189, 237, 239, 0.4) 0%, rgba(247, 252, 252, 0.5) 30%, transparent 60%),
+              radial-gradient(circle at 0% 100%, rgba(189, 237, 239, 0.3) 0%, rgba(234, 248, 248, 0.4) 28%, transparent 55%),
+              linear-gradient(135deg, #FFFFFF 0%, #F8FCFC 48%, #EDF8F8 100%);
+  overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* ==========================================================================
+   Background Artworks & Decorative Layers (Physiotherapy Healthcare Theme)
+   ========================================================================== */
+
+.about-decorations {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* Faint Anatomical Spine Illustration along far-left edge */
+.about-spine-illustration {
+  position: absolute;
+  top: clamp(10px, 2vw, 30px);
+  left: clamp(-18px, -1.2vw, -8px);
+  height: clamp(320px, 82%, 520px);
+  width: auto;
+  max-width: clamp(70px, 6.5vw, 105px);
+  opacity: 0.14;
+  pointer-events: none;
+  z-index: 1;
+  user-select: none;
+}
+
+/* Top-Right Flowing Layered Waves with Contour Lines */
+.about-waves-top-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: clamp(280px, 32vw, 480px);
+  height: clamp(160px, 19vw, 290px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Bottom-Left Flowing Organic Waves */
+.about-waves-bottom-left {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: clamp(200px, 24vw, 360px);
+  height: clamp(120px, 14vw, 210px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Upper-Left Dot Grid (Above Campus Image) */
+.about-dots-upper-left {
+  position: absolute;
+  top: clamp(2rem, 3.5vw, 3.5rem);
+  left: clamp(1.5rem, 5vw, 6rem);
+  width: clamp(60px, 6vw, 84px);
+  height: auto;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Right-Side Subtle Dotted Pattern */
+.about-dots-right {
+  position: absolute;
+  bottom: clamp(18%, 22vw, 28%);
+  right: clamp(1.5rem, 4vw, 4.5rem);
+  width: clamp(60px, 5.5vw, 80px);
+  height: auto;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Pale-Teal Medical Cross Accent */
+.about-medical-cross {
+  position: absolute;
+  top: clamp(90px, 12vw, 160px);
+  right: clamp(35px, 5vw, 75px);
+  width: clamp(24px, 2.2vw, 32px);
+  height: clamp(24px, 2.2vw, 32px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Bottom-Right Faint Watermark of Campus Architecture */
+.about-watermark-wrapper {
+  position: absolute;
+  right: -20px;
+  bottom: -20px;
+  width: clamp(320px, 30vw, 500px);
+  height: clamp(220px, 22vw, 340px);
+  opacity: 0.08;
+  mix-blend-mode: multiply;
+  mask-image: radial-gradient(circle at 85% 85%, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 78%);
+  -webkit-mask-image: radial-gradient(circle at 85% 85%, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 78%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.about-watermark-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%) contrast(105%);
+}
+
+/* ==========================================================================
+   Centered Two-Column Main Layout
+   ========================================================================== */
+
+.about-main-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 0 clamp(1rem, 2.5vw, 2rem);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.08fr);
+  gap: clamp(2rem, 3.5vw, 3.75rem);
+  align-items: center;
+  box-sizing: border-box;
+}
+
+@media (min-width: 1600px) {
+  .about-main-container {
+    max-width: 1440px;
+  }
+}
+
+/* ==========================================================================
+   Left Column: Campus Photograph & Frame
+   ========================================================================== */
+
+.about-image-column {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+}
+
+.about-image-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1.36 / 1;
+  background-color: #FFFFFF;
+  border: clamp(6px, 0.7vw, 10px) solid #FFFFFF;
+  border-radius: clamp(20px, 2.2vw, 32px);
+  overflow: hidden;
+  box-shadow:
+    0 20px 45px -10px rgba(7, 91, 96, 0.16),
+    0 10px 22px -5px rgba(8, 43, 80, 0.08),
+    0 0 0 1px rgba(220, 235, 236, 0.7);
+  z-index: 2;
+}
+
+.about-clinical-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+  border-radius: clamp(14px, 1.6vw, 22px);
+  display: block;
+  transition: transform var(--transition-smooth);
+}
+
+.about-image-frame:hover .about-clinical-img {
+  transform: scale(1.025);
+}
+
+/* Establishment Badge */
+.about-badge-card {
+  position: absolute;
+  bottom: clamp(12px, 1.5vw, 20px);
+  right: clamp(12px, 1.5vw, 20px);
+  background-color: #075B60;
+  border: 1.5px solid rgba(255, 255, 255, 0.22);
+  border-radius: clamp(10px, 1vw, 14px);
+  padding: clamp(8px, 0.85vw, 11px) clamp(12px, 1.2vw, 18px);
+  display: flex;
+  align-items: center;
+  gap: clamp(8px, 1vw, 14px);
+  box-shadow: 0 10px 24px rgba(7, 43, 46, 0.4);
+  z-index: 3;
+  max-width: calc(100% - 24px);
+}
+
+.badge-icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #FFFFFF;
+}
+
+.badge-building-icon {
+  width: clamp(20px, 1.8vw, 24px);
+  height: clamp(20px, 1.8vw, 24px);
+  stroke-width: 1.8;
+}
+
+.badge-text-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+}
+
+.badge-highlight-number {
+  font-family: var(--font-heading);
+  font-size: clamp(0.88rem, 0.95vw, 1.05rem);
+  font-weight: 700;
+  color: #FFC928; /* Institutional Gold */
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.badge-highlight-sub {
+  font-size: clamp(0.72rem, 0.78vw, 0.8rem);
+  font-weight: 500;
+  color: #FFFFFF;
+  line-height: 1.25;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ==========================================================================
+   Right Column: Information, Heading, Highlights & CTA
+   ========================================================================== */
+
+.about-content-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+  width: 100%;
+}
+
+/* Eyebrow Label */
+.about-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: clamp(0.6rem, 0.8vw, 0.85rem);
+}
+
+.about-eyebrow-dash {
+  width: 24px;
+  height: 3px;
+  background-color: #168F95; /* Vibrant Accent Teal */
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.about-eyebrow-text {
+  font-size: clamp(0.75rem, 0.8vw, 0.82rem);
+  font-weight: 700;
+  letter-spacing: 3.5px;
+  color: #082B50; /* Dark Navy */
+  text-transform: uppercase;
+}
+
+/* Main Heading */
+.about-heading {
+  font-family: var(--font-heading);
+  font-size: clamp(1.85rem, 2.5vw + 0.3rem, 2.75rem);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: clamp(0.85rem, 1.1vw, 1.25rem);
+  letter-spacing: -0.015em;
+  display: flex;
+  flex-direction: column;
+}
+
+.heading-line-navy {
+  color: #082B50; /* Dark Navy First Line */
+}
+
+.heading-line-teal {
+  color: #168F95; /* Vibrant Accent Teal Second Line */
+}
+
+/* Description Text */
+.about-description {
+  font-size: clamp(0.95rem, 1vw, 1.05rem);
+  color: #526B7B; /* Muted Blue-Gray */
+  line-height: 1.65;
+  margin-bottom: clamp(1.25rem, 1.8vw, 1.85rem);
+  max-width: 640px;
+}
+
+/* 4 Icon-Led Highlights List */
+.about-highlights-list {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.75rem, 1vw, 1.05rem);
+  margin-bottom: clamp(1.5rem, 2vw, 2.15rem);
+}
+
+.about-highlight-item {
+  display: flex;
+  align-items: center;
+  gap: clamp(10px, 1.2vw, 16px);
+}
+
+.highlight-icon-circle {
+  width: clamp(38px, 3.2vw, 44px);
+  height: clamp(38px, 3.2vw, 44px);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.highlight-icon-circle svg {
+  width: clamp(18px, 1.5vw, 22px);
+  height: clamp(18px, 1.5vw, 22px);
+}
+
+/* Exact Icon Circle Tint Palettes from Reference Specification */
+.highlight-icon-circle.icon-aqua {
+  background-color: #D8F3F4;
+  color: #0E8B92;
+}
+
+.highlight-icon-circle.icon-orange {
+  background-color: #FEE8D8;
+  color: #E67319;
+}
+
+.highlight-icon-circle.icon-pink {
+  background-color: #FDE2E7;
+  color: #DF445F;
+}
+
+.highlight-icon-circle.icon-green {
+  background-color: #DAF5E5;
+  color: #22A55D;
+}
+
+.highlight-text {
+  font-size: clamp(0.88rem, 0.95vw, 0.98rem);
+  font-weight: 600;
+  color: #082B50; /* Dark Navy */
+  line-height: 1.45;
+}
+
+/* Call-to-Action Button */
+.about-cta-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.btn-about-teal {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #075B60; /* Deep Teal */
+  color: #FFFFFF;
+  padding: clamp(0.8rem, 0.9vw, 0.95rem) clamp(1.6rem, 1.8vw, 2rem);
+  font-size: clamp(0.92rem, 0.96vw, 1rem);
+  font-weight: 600;
+  border-radius: 9999px;
+  text-decoration: none;
+  box-shadow: 0 8px 22px rgba(7, 91, 96, 0.28);
+  transition: all 250ms ease;
+  width: fit-content;
+}
+
+.btn-about-teal:hover {
+  background-color: #0A6E74;
+  box-shadow: 0 12px 28px rgba(7, 91, 96, 0.36);
+  transform: translateY(-2px);
+}
+
+.btn-arrow {
+  transition: transform 200ms ease;
+}
+
+.btn-about-teal:hover .btn-arrow {
+  transform: translateX(5px);
+}
+
+.btn-about-teal:focus-visible {
+  outline: 2px solid #FFC928;
+  outline-offset: 3px;
+}
+
+/* ==========================================================================
+   Responsive Adaptations
+   ========================================================================== */
+
+@media (max-width: 1080px) {
+  .about-section {
+    padding: clamp(4rem, 5vw, 5rem) 0;
+  }
+
+  .about-main-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .about-image-column {
+    max-width: 620px;
+    margin: 0 auto;
+  }
+
+  .about-content-column {
+    max-width: 660px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .about-section {
+    padding: 3.5rem 0;
+  }
+
+  .about-main-container {
+    padding: 0 1rem;
+    gap: 2.25rem;
+  }
+
+  .about-image-frame {
+    border: 6px solid #FFFFFF;
+    border-radius: 20px;
+  }
+
+  .about-clinical-img {
+    border-radius: 14px;
+  }
+
+  .about-badge-card {
+    bottom: 10px;
+    right: 10px;
+    padding: 7px 12px;
+    gap: 8px;
+    border-radius: 10px;
+  }
+
+  .badge-building-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .badge-highlight-number {
+    font-size: 0.85rem;
+  }
+
+  .badge-highlight-sub {
+    font-size: 0.7rem;
+  }
+
+  .about-heading {
+    font-size: 1.75rem;
+    line-height: 1.22;
+  }
+
+  .about-description {
+    font-size: 0.92rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .highlight-icon-circle {
+    width: 36px;
+    height: 36px;
+  }
+
+  .highlight-icon-circle svg {
+    width: 17px;
+    height: 17px;
+  }
+
+  .highlight-text {
+    font-size: 0.88rem;
+  }
+
+  .btn-about-teal {
+    padding: 0.85rem 1.65rem;
+    font-size: 0.92rem;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .about-spine-illustration {
+    opacity: 0.08;
+    max-width: 55px;
+  }
+
+  .about-dots-upper-left,
+  .about-dots-right {
+    opacity: 0.18;
+    transform: scale(0.85);
+  }
+
+  .about-waves-top-right {
+    width: 240px;
+    height: 140px;
+  }
+
+  .about-waves-bottom-left {
+    width: 180px;
+    height: 100px;
+  }
+}

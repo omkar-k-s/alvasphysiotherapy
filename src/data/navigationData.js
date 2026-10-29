@@ -108,3 +108,6 @@ export const navigationItems = [
     isActive: false,
   },
 ];
+
+export default navigationItems;
+
